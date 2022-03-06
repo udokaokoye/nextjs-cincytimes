@@ -9,11 +9,10 @@
     "lint": "next lint"
   },
   "dependencies": {
-    "next": "12.1.0",
-    "react": "17.0.2",
-    "react-dom": "17.0.2",
     "@ckeditor/ckeditor5-build-classic": "^32.0.0",
     "@ckeditor/ckeditor5-build-decoupled-document": "^32.0.0",
+    "@ckeditor/ckeditor5-html-embed": "^32.0.0",
+    "@ckeditor/ckeditor5-media-embed": "^32.0.0",
     "@ckeditor/ckeditor5-react": "^4.0.0",
     "@editorjs/editorjs": "^2.23.2",
     "@editorjs/embed": "^2.5.0",
@@ -25,9 +24,13 @@
     "@fortawesome/free-brands-svg-icons": "^5.15.4",
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
+    "ckeditor5-custom-build": "file:customCK",
     "moment": "^2.29.1",
+    "next": "12.1.0",
     "php-serialize": "^4.0.2",
+    "react": "17.0.2",
     "react-cookie": "4.0.3",
+    "react-dom": "17.0.2",
     "swr": "^1.2.2"
   },
   "devDependencies": {

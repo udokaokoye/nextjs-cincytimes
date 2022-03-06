@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LineBreaker from "../Components/Line Breaker/LineBreaker";
 import TopStories from "../Components/Top Stories/TopStories";
 // import './Home.css'
+import Script from 'next/script'
 import {
   faArrowRight,
   faMapMarkerAlt,
@@ -42,6 +43,7 @@ const Home = () => {
   return (
     <>
       <HeaderNav />
+      <Script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
       <div className="container" id="container">
         <div className="container-wrapper">
           <div className="main_content">

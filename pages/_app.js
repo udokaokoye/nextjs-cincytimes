@@ -22,11 +22,12 @@ import '../styles/SideNav.css'
 import '../styles/SubscribeBox.css'
 import '../styles/VaccineFinder.css'
 import '../styles/Weather.css'
-// import '../styles/'
-// import '../styles/'
-// import '../styles/'
-// import '../styles/'
-// import '../styles/'
+import '../styles/AdminAuth.css'
+import '../styles/AdminNav.css'
+import '../styles/AdminNewsCategory.css'
+import '../styles/AdminAllPost.css'
+import '../styles/AdminAddPost.css'
+import '../styles/AdminHome.css'
 
 function MyApp({ Component, pageProps }) {
   return <Component {...pageProps} />

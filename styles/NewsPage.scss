@@ -7,11 +7,65 @@
   min-height: 15vh !important;
 }
 
+// figure {
+//   width: 600px;
+//   height: 600px;
+
+
+// }
+
+.raw-html-embed {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+
+}
+
 
 * {
   // overflow-x: hidden;
 }
 
+.router_link {
+  text-decoration: none;
+  color: initial;
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  background: none;
+  -webkit-tap-highlight-color: none !important;
+  cursor: pointer !important;
+
+  &:hover {
+    text-decoration: none;
+  color: initial;
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  background: none;
+  -webkit-tap-highlight-color: none !important;
+  }
+
+  &:visited {
+    text-decoration: none;
+  color: initial;
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  background: none;
+  -webkit-tap-highlight-color: none !important;
+  }
+
+  &:focus {
+    text-decoration: none;
+  color: initial;
+  border: none;
+  outline: none;
+  background-color: transparent !important;
+  background: none;
+  -webkit-tap-highlight-color: none !important;
+  }
+}
 
 .newsPage_container {
   max-width: 1250px;
@@ -64,7 +118,7 @@
       }
     }
 
-    .media {
+    .img_media {
       width: 100%;
       height: auto;
       // background: #ee4f;
@@ -129,7 +183,7 @@
         font-weight: 300;
       }
 
-      .media {
+      .img_media {
         display: none !important;
       }
 
@@ -141,6 +195,7 @@
         
       }
     }
+
 
     .news_comments {
       width: 99%;
@@ -272,7 +327,7 @@
           .comment_textField {
             width: 100%;
             min-height: 20vh;
-            border: 1px solid #ccc;
+            // border: 1px solid #ccc;
 
             margin-bottom: 25px;
           }
@@ -475,7 +530,7 @@
 @media only screen and (max-width: 600px) {
   .newsPage_container {
     .newsPage_wrapper {
-      .media {
+      .img_media {
         img {
           height: 300px;
         }
@@ -537,7 +592,7 @@
       .news_summary {
         font-size: 19px;
       }
-      .media {
+      .img_media {
         img {
           height: 250px;
         }

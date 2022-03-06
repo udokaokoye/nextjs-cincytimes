@@ -16,15 +16,16 @@ import SideNav from "../Side Nav/SideNav";
 const HeaderNav = () => {
   const [sideToggle, setsideToggle] = useState(false);
 
-  function disableScroll() {
-    window.onscroll = function () {
-      window.scrollTo(0, 0);
-    };
-  }
-  function enableScroll() {
-    window.onscroll = function () {};
-  }
-
+//       if (typeof window !== 'undefined') {
+//   function disableScroll() {
+//     window.onscroll = function () {
+//       window.scrollTo(0, 0);
+//     };
+//   }
+//   function enableScroll() {
+//     window.onscroll = function () {};
+//   }
+// }
   //   useEffect(() => {
   //     if (sideToggle) {
   //         document.getElementById("container").style.display = 'none'

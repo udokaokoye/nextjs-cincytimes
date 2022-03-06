@@ -14,3 +14,7 @@ a {
 * {
   box-sizing: border-box;
 }
+
+.ck.ck-editor__editable span[data-ck-unsafe-element] {
+	display: none;
+}

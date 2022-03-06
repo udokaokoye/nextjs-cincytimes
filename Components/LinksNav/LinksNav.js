@@ -34,7 +34,7 @@ const LinksNav = () => {
                 <Link href='/category/world' className='link'>World & Nation</Link>
             </div>
             <div className="right">
-               <Link href='/' style={{color: 'white'}} className='router_link auth_nav_btn'><span>{ loggedin ? users?.u_fname : 'Sign In'}  <FontAwesomeIcon icon={faUser} /></span></Link> 
+               <Link href='/auth' style={{color: 'white'}} className='router_link auth_nav_btn'><span>{ loggedin ? users?.u_fname : 'Sign In'}  <FontAwesomeIcon icon={faUser} /></span></Link> 
                <div className="menu">
                    <FontAwesomeIcon icon={faBars} />
                </div>

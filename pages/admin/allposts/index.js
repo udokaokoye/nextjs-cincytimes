@@ -5,9 +5,9 @@ import { GetAdminEditPosts } from "../../../lib/swr-hooks";
 const AllPost = () => {
   const { adminPosts, isLoad } = GetAdminEditPosts();
   let allposts = [];
-  useEffect(() => {
-    allposts = adminPosts;
-  }, [isLoad]);
+  allposts = !isLoad ? adminPosts : {};
+  // useEffect(() => {
+  // }, [isLoad]);
 
   return (
     <>

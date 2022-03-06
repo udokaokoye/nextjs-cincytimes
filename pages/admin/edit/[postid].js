@@ -66,7 +66,7 @@ const EditPost = () => {
     settrending(!isLoad ? allAdminPost?.trending === "true" : false);
     settop_story(!isLoad ? allAdminPost?.top_story === "true" : false);
     setpublished(!isLoad ? allAdminPost?.published === "true" : false);
-  }, [adminPosts]);
+  }, );
 
   useEffect(() => {
     document.getElementById("videos").files = null

@@ -279,7 +279,7 @@ const NewsPage = () => {
             </div>
           </div>
           <br />
-          <Link href="/auth">
+          <Link passHref href="/auth">
             <span
               style={{
                 fontSize: "12px",
@@ -373,8 +373,8 @@ const NewsPage = () => {
 
             <div className="comment_content_wrapper">
               {comments?.map((comment, i) => (
-                <React.Fragment>
-                  <div key={i} className="comment_content">
+                <React.Fragment key={i}>
+                  <div key={Math.random()} className="comment_content">
                     <div className="profile_img">{comment.u_fname[0]}</div>
                     <div className="commnent_details">
                       <h3 className="user_name">

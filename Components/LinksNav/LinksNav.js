@@ -17,24 +17,24 @@ const LinksNav = () => {
                     <div className="menu_bar"><FontAwesomeIcon icon={faBars} /></div>
                 </div>
                 <div className='link with_flag'> 
-                <span className='link'><Link href='/category/OHIO' className='link'>OHIO</Link></span>
+                <span className='link'><Link passHref href='/category/OHIO' className='link'>OHIO</Link></span>
                 
                 <span className='flag_container'>
                     <img 
-                        className='ohio_state_flag' src={require('../../Assets/Demo/Flag_Map_of_Ohio.svg.png').default.src} />
+                        className='ohio_state_flag' src={require('../../Assets/Demo/Flag_Map_of_Ohio.svg.png').default.src} alt={"#"} />
                     </span>
                 </div>
-                <Link href='/category/entertainment' className='link'> Entertainment</Link>
-                <Link href='/category/crime' className='link'>Crime</Link>
-                <Link href='/category/sport' className='link'>Sports</Link>
-                <Link href='/category/business' className='link'>Business</Link>
-                <Link href='/category/lifestyle' className='link'>Lifestyle</Link>
-                <Link href='/category/politcs' className='link'>Politics</Link>
-                <Link href='/category/travel' className='link'>Travel</Link>
-                <Link href='/category/world' className='link'>World & Nation</Link>
+                <Link passHref href='/category/entertainment' className='link'> Entertainment</Link>
+                <Link passHref href='/category/crime' className='link'>Crime</Link>
+                <Link passHref href='/category/sport' className='link'>Sports</Link>
+                <Link passHref href='/category/business' className='link'>Business</Link>
+                <Link passHref href='/category/lifestyle' className='link'>Lifestyle</Link>
+                <Link passHref href='/category/politcs' className='link'>Politics</Link>
+                <Link passHref href='/category/travel' className='link'>Travel</Link>
+                <Link passHref href='/category/world' className='link'>World & Nation</Link>
             </div>
             <div className="right">
-               <Link href='/auth' style={{color: 'white'}} className='router_link auth_nav_btn'><span>{ loggedin ? users?.u_fname : 'Sign In'}  <FontAwesomeIcon icon={faUser} /></span></Link> 
+               <Link passHref href='/auth' style={{color: 'white'}} className='router_link auth_nav_btn'><span>{ loggedin ? users?.u_fname : 'Sign In'}  <FontAwesomeIcon icon={faUser} /></span></Link> 
                <div className="menu">
                    <FontAwesomeIcon icon={faBars} />
                </div>

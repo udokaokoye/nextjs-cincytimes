@@ -53,7 +53,7 @@ const HeaderNav = () => {
           </div>
         </div>
         <div className="center">
-          <Link href="/" className="router_link">
+          <Link passHref href="/" className="router_link">
             <h1>The Cincinnati Times</h1>
           </Link>
         </div>
@@ -63,6 +63,7 @@ const HeaderNav = () => {
           </span>
           <Link
             style={{ display: sideToggle ? "none" : "block" }}
+            passHref
             href="/"
             className="router_link"
           >

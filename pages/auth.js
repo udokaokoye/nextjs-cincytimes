@@ -23,7 +23,7 @@ const [cookies, setCookie, removeCookie] = useCookies(["user"]);
         router.replace('/')
     }
 
-  }, [])
+  }, [loggedin, router])
   
 
   const AuthnticateUser = () => {
@@ -74,7 +74,7 @@ const [cookies, setCookie, removeCookie] = useCookies(["user"]);
   return (
     <div className="auth_container">
       <div className="auth_nav">
-        <Link href={"/"} className="router_link">
+        <Link passHref href={"/"} className="router_link">
           <h3>The Cincinnati Times</h3>
         </Link>
       </div>

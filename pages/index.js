@@ -64,14 +64,14 @@ const Home = () => {
                   <div className="showcase_content_child">
                     <p className="content_child_header"> More Coverage</p>
                     <p className="content_child_title">
-                      <Link href={"/"} className="router_link">
+                      <Link href={"/auth"} passHref className="router_link">
                         <p>
                           California lawmakers on Jan. 6: ‘I really thought that
                           I was going to die that day’
                         </p>
                       </Link>
                       <LineBreaker width="full" />
-                      <Link href={"/"} className="router_link">
+                      <Link passHref href={"/auth"} className="router_link">
                         <p>
                           California lawmakers on Jan. 6: ‘I really thought that
                           I was going to die that day’

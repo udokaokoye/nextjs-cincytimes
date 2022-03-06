@@ -9,6 +9,7 @@ import Bold from '@ckeditor/ckeditor5-basic-styles/src/bold.js';
 import CloudServices from '@ckeditor/ckeditor5-cloud-services/src/cloudservices.js';
 import Essentials from '@ckeditor/ckeditor5-essentials/src/essentials.js';
 import Heading from '@ckeditor/ckeditor5-heading/src/heading.js';
+import HtmlEmbed from '@ckeditor/ckeditor5-html-embed/src/htmlembed.js';
 import Image from '@ckeditor/ckeditor5-image/src/image.js';
 import ImageCaption from '@ckeditor/ckeditor5-image/src/imagecaption.js';
 import ImageStyle from '@ckeditor/ckeditor5-image/src/imagestyle.js';
@@ -35,6 +36,7 @@ Editor.builtinPlugins = [
 	CloudServices,
 	Essentials,
 	Heading,
+	HtmlEmbed,
 	Image,
 	ImageCaption,
 	ImageStyle,
@@ -72,7 +74,8 @@ Editor.defaultConfig = {
 			'insertTable',
 			'mediaEmbed',
 			'undo',
-			'redo'
+			'redo',
+			'htmlEmbed'
 		]
 	},
 	language: 'en',

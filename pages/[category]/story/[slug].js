@@ -217,9 +217,9 @@ const NewsPage = () => {
     <>
       <Head>
         <meta charset="UTF-8" />
-        <title>{renderPost?.title}</title>
+        <title>{`Hello SummaryySaS`}</title>
         {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-        <meta name="descrition" content={`Hello Summary`} />
+        <meta name="descrition" content={`Hello SummaryySS`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
         <meta property="og:title" content={"HEllo"} />

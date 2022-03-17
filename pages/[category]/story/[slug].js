@@ -226,15 +226,15 @@ const NewsPage = () => {
         <meta property="og:type" content="article" />
         <meta
           property="og:image"
-          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+          content={`https://api.thecincinnatitimes.com/${pictures[0]}`}
         />
         <meta
           property="og:url"
-          content={`http://192.168.1.158:3000/category/story/${renderPost?.post_id}`}
+          content={`https://leviokoye.online/category/story/${renderPost?.post_id}`}
         />
         <meta
           name="twitter:card"
-          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+          content={`https://leviokoye.online/cincinnatitimes/${pictures[0]}`}
         />
 
         {/* Non-Essential, But Recommended */}
@@ -289,7 +289,7 @@ const NewsPage = () => {
 
           <div className="img_media media_1">
             <Image
-              src={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+              src={`https://api.thecincinnatitimes.com/${pictures[0]}`}
               alt=""
               className="img"
               layout="fill"

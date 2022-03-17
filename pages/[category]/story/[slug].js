@@ -219,22 +219,22 @@ const NewsPage = () => {
         <meta charset="UTF-8" />
         <title>{renderPost?.title}</title>
         {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-        <meta name="descrition" content={`${renderPost?.summary}`} />
+        <meta name="descrition" content={`Hello Summary`} />
         <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
-        <meta property="og:title" content={renderPost?.title} />
+        <meta property="og:title" content={"HEllo"} />
         <meta property="og:type" content="article" />
         <meta
           property="og:image"
-          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+          content={`https://api.thecincinnatitimes.com/${pictures[0]}`}
         />
         <meta
           property="og:url"
-          content={`http://192.168.1.158:3000/category/story/${renderPost?.post_id}`}
+          content={`https://leviokoye.online/category/story/${renderPost?.post_id}`}
         />
         <meta
           name="twitter:card"
-          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+          content={`https://leviokoye.online/cincinnatitimes/${pictures[0]}`}
         />
 
         {/* Non-Essential, But Recommended */}
@@ -289,7 +289,7 @@ const NewsPage = () => {
 
           <div className="img_media media_1">
             <Image
-              src={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+              src={`https://api.thecincinnatitimes.com/${pictures[0]}`}
               alt=""
               className="img"
               layout="fill"

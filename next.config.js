@@ -4,7 +4,7 @@ const nextConfig = {
   images: {
     // loader: 'default',
     // path: 'https://www.costaloc.com/img/loaders/loader-blue.png',
-    domains: ['192.168.1.158'],
+    domains: ['192.168.1.158', 'thecincinnatitimes.com', 'api.thecincinnatitimes.com'],
   },
   eslint: {
     // Warning: This allows production builds to successfully complete even if

@@ -68,6 +68,7 @@
                 font-weight: bold;
                 font-size: 17px;
                 margin-bottom: 20px !important;
+                // display: none !important;
             }
         }
 
@@ -78,15 +79,15 @@
             display: flex;
             flex-direction: column;
 
-            // .side_links {
-            //     font-family: 'Roboto' !important;
-            //     margin-bottom: 20px;
-            //     color: #4583b3;
-            //     text-decoration: none;
-            //     font-family: 'Franklin';
-            //     font-weight: bolder;
-            //     font-size: 17px;
-            // }
+            .side_nav_links_specs {
+                color: #0e8cac;
+                text-decoration: none;
+                font-family: 'Roboto';
+                font-weight: bold;
+                font-size: 17px;
+                margin-bottom: 20px !important;
+                // display: none !important;
+            }
         }
     }
 

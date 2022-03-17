@@ -1,10 +1,11 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AdminNav from "../../../Components/AdminNav/AdminNav";
 import Editor from "../../../Components/Editor";
 import { GetCategories, GetAdminEditPosts } from "../../../lib/swr-hooks";
 
 import { useRouter } from "next/router";
 const EditPost = () => {
+  const alertBox = useRef(null)
   const [post_title, setpost_title] = useState("");
   const [post_category, setpost_category] = useState("");
   const [post_summary, setpost_summary] = useState("");
@@ -66,7 +67,7 @@ const EditPost = () => {
     settrending(!isLoad ? allAdminPost?.trending === "true" : false);
     settop_story(!isLoad ? allAdminPost?.top_story === "true" : false);
     setpublished(!isLoad ? allAdminPost?.published === "true" : false);
-  }, );
+  }, [allAdminPost]);
 
   useEffect(() => {
     document.getElementById("videos").files = null
@@ -195,7 +196,8 @@ const EditPost = () => {
     })
       .then((res) => res.json())
       .then((data) => {
-        console.log(data);
+        setmessageAlert(data);
+        alertBox.current.scrollIntoView({behavior: 'smooth'})
       });
   };
 
@@ -208,7 +210,7 @@ const EditPost = () => {
         <div className="add_post_wrapper">
           <h1 className="add_post_intro">Edit Post - {postid}</h1>
 
-          <div style={{display: messageAlert !== '' ? 'flex' : 'none'}} className="message_alert">
+          <div ref={alertBox} style={{display: messageAlert !== '' ? 'flex' : 'none'}} className="message_alert">
               <p>{messageAlert}</p>
               </div>
 

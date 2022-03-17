@@ -1,8 +1,9 @@
-import React, { useEffect, useState } from "react";
+import React, { useEffect, useState, useRef } from "react";
 import AdminNav from "../../../Components/AdminNav/AdminNav";
 import Editor from "../../../Components/Editor";
 import {GetCategories} from '../../../lib/swr-hooks'
 const AddPost = () => {
+  const alertBox = useRef(null)
   const [post_title, setpost_title] = useState("");
   const [post_category, setpost_category] = useState("");
   const [postCategories, setpostCategories] = useState([]);
@@ -137,6 +138,10 @@ const AddPost = () => {
     formData.append("trending", trending);
     formData.append("top_story", top_story);
     formData.append("published", publishStatus);
+    if (caption_media_1.includes(',') || caption_media_2.includes(',') || caption_media_3.includes(',') || caption_media_4.includes(',') || caption_media_5.includes(',')) {
+      alert("Please make sure all caption DOES NOT include a ',' | replace commas with '-'")
+      return;
+    }
     formData.append("captions", [caption_media_1, caption_media_2, caption_media_3, caption_media_4, caption_media_5] )
     // formData.append("caption_1", caption_media_1);
     // formData.append("caption_2", caption_media_2);
@@ -151,6 +156,7 @@ const AddPost = () => {
       .then((res) => res.json())
       .then((data) => {
         setmessageAlert(data);
+        alertBox.current.scrollIntoView({behavior: 'smooth'})
       });
   };
 
@@ -161,7 +167,7 @@ const AddPost = () => {
       <div className="add_post_wrapper">
         <h1 onClick={() => console.log(postCategories)} className="add_post_intro">Add New Post</h1>
 
-            <div style={{display: messageAlert !== '' ? 'flex' : 'none'}} className="message_alert">
+            <div ref={alertBox} style={{display: messageAlert !== '' ? 'flex' : 'none'}} className="message_alert">
               <p>{messageAlert}</p>
               </div>
         <div className="form">
@@ -181,6 +187,13 @@ const AddPost = () => {
                   } />  {catg.category_name}
                 </div>
               ))}
+
+<div className="chk_box" key={'article'}>
+                <input type="checkbox" checked={postCategories.includes("Article")} onChange={() => {
+                  postCategories.includes("Article") ? setpostCategories(postCategories.filter(catg_nm => catg_nm !== "Article")) : setpostCategories([...postCategories, "Article"])}
+                  
+                  } />  {"Article"}
+                </div>
             </div>
           <h3>Post Summary *</h3>
           <textarea

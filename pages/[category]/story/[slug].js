@@ -7,7 +7,7 @@ import {
   faTwitch,
   faTwitter,
 } from "@fortawesome/free-brands-svg-icons";
-import Script from 'next/script'
+import Script from "next/script";
 import {
   faComment,
   faComments,
@@ -32,15 +32,16 @@ import { mutate } from "swr";
 import Link from "next/link";
 import { useRouter } from "next/router";
 import HeaderNav from "../../../Components/HeaderNav/HeaderNav";
-
+import Image from "next/image";
+import Loader from "../../../Components/Loader/Loader";
 const NewsPage = () => {
   const router = useRouter();
   const { slug } = router.query;
+  const { post, isLoad } = GetPostById(slug);
   const [showComments, setshowComments] = useState(false);
   const [showAddComment, setshowAddComment] = useState(false);
   const [commentContent, setcommentContent] = useState(true);
   const [commentOrder, setcommentOrder] = useState("Newest");
-  const { post, isLoad } = GetPostById(slug);
   const { loggedin, userId } = useIsLoggedIn();
   const { editor } = GetEditorById(!isLoad ? post[0]?.editor_id : "");
   const { users } = GetUser(userId);
@@ -65,6 +66,16 @@ const NewsPage = () => {
   useEffect(() => {
     setEditorLoaded(true);
   }, []);
+
+  // useEffect(() => {
+
+  //   if (isLoad) {
+  //     return (
+  //       <h1>LOADER</h1>
+  //     )
+  //   }
+
+  // }, [isLoad])
 
   // useEffect(() => {
   //   console.log(commentOrder)
@@ -104,58 +115,107 @@ const NewsPage = () => {
     ? (renderPost?.content + "")
         .replace(
           "@IMG1",
-          `<div className='media'><img width='100%' src='http://192.168.1.158/cincinnatitimes/${
-            pictures[1]
-          }' title='${renderPost?.title}' alt='${
-            renderPost?.title
-          }'/> <small className='media_description'>${
+          `<div class='content_media'>
+          
+          <Image
+              src='http://192.168.1.158/cincinnatitimes/${pictures[1]}'
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../../Assets/Logos/small logo.png"
+            />
+          <small class='media_description'>${
             renderPost?.media_captions?.split(",")[1]
           }</small></div>`
         )
         .replace(
           "@IMG2",
-          `<div className='media'><img width='100%' src='http://192.168.1.158/cincinnatitimes/${
-            pictures[2]
-          }' title='${renderPost?.title}' alt='${
-            renderPost?.title
-          }'/> <small className='media_description'>${
+          `<div class='content_media'>
+          <Image
+              src='http://192.168.1.158/cincinnatitimes/${pictures[2]}'
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../../Assets/Logos/small logo.png"
+            />
+          <small class='media_description'>${
             renderPost?.media_captions?.split(",")[2]
           }</small></div>`
         )
         .replace(
           "@IMG3",
-          `<div className='media'><img width='100%' src='http://192.168.1.158/cincinnatitimes/${
-            pictures[3]
-          }' title='${renderPost?.title}' alt='${
-            renderPost?.title
-          }'/> <small className='media_description'>${
+          `<div class='content_media'>
+          
+          <Image
+              src='http://192.168.1.158/cincinnatitimes/${pictures[3]}'
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../../Assets/Logos/small logo.png"
+            />
+          
+          <small class='media_description'>${
             renderPost?.media_captions?.split(",")[3]
           }</small></div>`
         )
         .replace(
           "@IMG4",
-          `<div className='media'><img width='100%' src='http://192.168.1.158/cincinnatitimes/${
-            pictures[4]
-          }' title='${renderPost?.title}' alt='${
-            renderPost?.title
-          }'/> <small className='media_description'>${
+          `<div class='content_media'>
+          
+          <Image
+              src='http://192.168.1.158/cincinnatitimes/${pictures[4]}'
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../../Assets/Logos/small logo.png"
+            />
+          
+          <small class='media_description'>${
             renderPost?.media_captions?.split(",")[4]
           }</small></div>`
-        )        .replace(
+        )
+        .replace(
           "@VID",
-          `<div className='media'>
+          `<div class='media'>
           <h3>Watch Video Below</h3>
           <video width='100%' controls src='http://192.168.1.158/cincinnatitimes${
             renderPost?.video_path
-          }' /> <small className='media_description'>${
+          }' /> <small class='media_description'>${
             renderPost?.media_captions?.split(",")[4]
           }</small></div>`
         )
     : "";
 
+    const CommentEditor = () => {
+      return (
+        <Editor
+                      name={"Comment"}
+                      onChange={(data) => {
+                        setcommentContent(data);
+                      }}
+                      editorLoaded={editorLoaded}
+                      editorConfiguration={editorConfiguration}
+                    />
+      )
+    }
+
+
+
+  // if (isLoad) {
+  //   return <Loader />
+  // } 
+
   return (
     <>
-    <Head>
+      <Head>
         <meta charset="UTF-8" />
         <title>{renderPost?.title}</title>
         {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
@@ -164,23 +224,43 @@ const NewsPage = () => {
 
         <meta property="og:title" content={renderPost?.title} />
         <meta property="og:type" content="article" />
-        <meta property="og:image" content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`} />
-        <meta property="og:url" content={`http://192.168.1.158:3000/category/story/${renderPost?.post_id}`} />
-        <meta name="twitter:card" content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`} />
+        <meta
+          property="og:image"
+          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+        />
+        <meta
+          property="og:url"
+          content={`http://192.168.1.158:3000/category/story/${renderPost?.post_id}`}
+        />
+        <meta
+          name="twitter:card"
+          content={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
+        />
 
         {/* Non-Essential, But Recommended */}
         <meta property="og:description" content={renderPost?.summary} />
         <meta property="og:site_name" content="The Cincinnati Times." />
         <meta name="twitter:image:alt" content={renderPost?.title}></meta>
       </Head>
-      <Script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
-      <Script sync defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="cdzOg1Ie" />
+      <Script
+        async
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      />
+      <Script
+        sync
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="cdzOg1Ie"
+      />
       <HeaderNav />
-      
+
       <div
         // onClick={() => alert(renderPost?.media_captions?.split(',')[0])}
         className="newsPage_container"
       >
+        {isLoad ? <Loader /> : ''}
         <div className="newsPage_wrapper">
           <h1 className="news_title">{renderPost?.title}</h1>
           <p className="news_summary">{renderPost?.summary}</p>
@@ -208,14 +288,20 @@ const NewsPage = () => {
           <LineBreaker />
 
           <div className="img_media media_1">
-            <img
+            <Image
               src={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`}
               alt=""
+              className="img"
+              layout="fill"
+              objectFit="contain"
+              placeholder="blur"
+              blurDataURL="../../../Assets/Logos/small logo.png"
             />
-            <small className="media_description">
-              {renderPost?.media_captions?.split(",")[0]}
-            </small>
+            {/* <img className="img" src={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`} alt="" /> */}
           </div>
+          <small className="media_description">
+            {renderPost?.media_captions?.split(",")[0]}
+          </small>
 
           <div className="author">
             <div className="auth_img">
@@ -320,7 +406,7 @@ const NewsPage = () => {
                   className="comment_form_main"
                 >
                   <div className="comment_textField">
-                    <Editor
+                  <Editor
                       name={"Comment"}
                       onChange={(data) => {
                         setcommentContent(data);

@@ -1,5 +1,6 @@
 import React from 'react';
 import LineBreaker from '../Line Breaker/LineBreaker';
+import Image from 'next/image';
 // import './NewsCategory2.css';
 const NewsCategory2 = ({categoryName, img='download (1).png'}) => {
   return <div className='newscategory_container'>
@@ -26,16 +27,21 @@ const NewsCategory2 = ({categoryName, img='download (1).png'}) => {
                             <p>Ms. Kryst, who was also a correspondent for the television show “Extra,” was found dead on Sunday in New York.</p>
                         </div>
                         <LineBreaker />
-                        <div className="links_wrap">
-                            <h3>- John James announces run for Michigan congressional seat</h3>
-                            <p>Big shows did well when they returned in the fall after the long pandemic shutdown but new plays struggled, previously undisclosed industry data shows.</p>
-                        </div>
-                        <LineBreaker />
                 </div>
 
                 <div className="main_show">
                     <div className="media">
-                    <img src={require(`../../Assets/Demo/${img}`).default.src} alt="" />
+                    {/* <img src={require(`../../Assets/Demo/${img}`).default.src} alt="" /> */}
+
+                    <Image
+              src={require(`../../Assets/Demo/${img}`).default.src}
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../Assets/Logos/small logo.png"
+            />
                 </div>
 
                 <div className="title">
@@ -59,9 +65,7 @@ const NewsCategory2 = ({categoryName, img='download (1).png'}) => {
                       <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
                       <LineBreaker />
                       <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
-                      <LineBreaker />
-                      <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
-                      <LineBreaker />
+
                       
                 </div>
           </div>

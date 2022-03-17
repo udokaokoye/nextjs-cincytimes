@@ -50,7 +50,7 @@ const [cookies, setCookie, removeCookie] = useCookies(["user"]);
         }
       }
 
-      fetch(`http://192.168.1.158/cincinnatitimes${authStatus !== 'USER NOT FOUND' ? '/auth/user_login.php' : '/register_user.php' }`, {
+      fetch(`https://api.thecincinnatitimes.com${authStatus !== 'USER NOT FOUND' ? '/AUTH/user_login.php' : '/register_user.php' }`, {
           method: "POST",
           body: formData
       }).then((res) => res.json()).then((data) => {

@@ -31,9 +31,7 @@ if (editorLoaded) {
         </>
       );
 } else {
-    return (
-        <p>Editor Loading</p>
-    )
+    return null
 }
 
 }

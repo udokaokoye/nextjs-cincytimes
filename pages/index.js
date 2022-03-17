@@ -4,7 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LineBreaker from "../Components/Line Breaker/LineBreaker";
 import TopStories from "../Components/Top Stories/TopStories";
 // import './Home.css'
-import Script from 'next/script'
+import Script from "next/script";
 import {
   faArrowRight,
   faMapMarkerAlt,
@@ -18,32 +18,43 @@ import CovidTracker from "../Components/Covid Tracker/CovidTracker";
 import VaccineFinder from "../Components/Vaccine Finder/VaccineFinder";
 import SubscribeBox from "../Components/Subscribe Box/SubscribeBox";
 import HeaderNav from "../Components/HeaderNav/HeaderNav";
-import Footer from '../Components/Footer/Footer'
+import Footer from "../Components/Footer/Footer";
 import sp from "../Assets/Demo/bidenchristmas.jpg";
 
-// import { useIsLoggedIn, GetUser } from '../../lib/swr-hooks';
+import { GetAllPosts, GetUser, useIsLoggedIn } from "../lib/swr-hooks";
+import Loader from "../Components/Loader/Loader";
+
 const Home = () => {
-  // const {loggedin, userId} = useIsLoggedIn()
-  // const {users} = GetUser(userId)
+  const { allpost, isLoad } = GetAllPosts();
+  const { loggedin, userId } = useIsLoggedIn();
+  if (loggedin) {
+    const { users } = GetUser(userId);
+  }
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  // const IsLoggedIn = () => {
-  //     if (cookies.user) {
-  //         return 1;
-  //       } else {
-  //           return 0;
-  //       }
-  // }
+  let showcasePost = allpost?.filter((ptt) => ptt.trending == 'true');
 
   useEffect(() => {
-      console.log(require('../Assets/Demo/bidenchristmas.jpg').default.src)
-  }, [])
+  }, [isLoad]);
 
+  if (isLoad) {
+    return <Loader />;
+  }
+
+  const retCatg = (catg = []) => {
+    if (catg.split(",")) {
+      return catg.split(",")[0];
+    } else {
+      return 0;
+    }
+  };
 
   return (
     <>
       <HeaderNav />
-      <Script async src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+
+      <Script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8" />
+      <Script sync defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="cdzOg1Ie" />
       <div className="container" id="container">
         <div className="container-wrapper">
           <div className="main_content">
@@ -51,14 +62,26 @@ const Home = () => {
             <div className="showcase">
               <div className="showcase_top">
                 <div className="showcase_content">
-                  <h1 className="show_contnent_title">
-                    Inside Klete Keller’s fall from Olympic gold to the Capitol
-                    riot
-                  </h1>
+                  <Link
+                    // className='router_link'
+                    href={`/${retCatg(showcasePost[1].category)}/story/${
+                      showcasePost[1].post_id
+                    }`}
+                  >
+                    <a>
+                      <h1 className="show_contnent_title">
+                        {/* Inside Klete Keller’s fall from Olympic gold to the Capitol
+                    riot */}
+                        {showcasePost[1].title}
+                      </h1>
+                    </a>
+                  </Link>
+
                   <p className="show_content_description">
-                    Keller has pleaded guilty to a felony charge of obstructing
+                    {/* Keller has pleaded guilty to a felony charge of obstructing
                     an officialproceeding before Congress and agreed to
-                    cooperate with the government’s investigation.
+                    cooperate with the government’s investigation. */}
+                    {showcasePost[1].summary}
                   </p>
 
                   <div className="showcase_content_child">
@@ -70,68 +93,98 @@ const Home = () => {
                           I was going to die that day’
                         </p>
                       </Link>
-                      <LineBreaker width="full" />
-                      <Link passHref href={"/auth"} className="router_link">
-                        <p>
-                          California lawmakers on Jan. 6: ‘I really thought that
-                          I was going to die that day’
-                        </p>
-                      </Link>
                     </p>
                   </div>
                 </div>
                 <div className="showcase_main_content">
-                  <h1>
-                    As Covid cases explode in California, next few weeks are
-                    ‘absolutely critical’
-                  </h1>
-                  <p>
-                    Keller has pleaded guilty to a felony charge of obstructing
-                    an officialproceeding before Congress and agreed to
-                    cooperate with the government’s investigation.
-                  </p>
+                  <Link
+                    // className='router_link'
+                    href={`/${retCatg(showcasePost[0].category)}/story/${
+                      showcasePost[0].post_id
+                    }`}
+                  >
+                    <a>
+                      <h1>{showcasePost[0].title}</h1>
+                    </a>
+                  </Link>
+                  <p>{showcasePost[0].summary}</p>
                 </div>
                 <div className="showcase_main">
-                  <img
-                    // loader={('default', 500, 75)}
-                    className="show_main_media"
-                    src={require('../Assets/Demo/bidenchristmas.jpg').default.src}
-                    alt="Picture of the author"
-                    // priority={true}
-                  />
+                  <Link
+                    // className='router_link'
+                    href={`/${retCatg(showcasePost[0].category)}/story/${
+                      showcasePost[0].post_id
+                    }`}
+                  >
+                    <a>
+                      <img
+                        // loader={('default', 500, 75)}
+                        className="show_main_media"
+                        src={`http://192.168.1.158/cincinnatitimes/${showcasePost[0].show_img}`}
+                        alt={showcasePost[0].title}
+                        // priority={true}
+                      />
+                    </a>
+                  </Link>
 
                   <div className="gradient">
-                    <h1 className="show_main_title">
-                      As Covid cases explode in California, next few weeks are
-                      ‘absolutely critical’
-                    </h1>
+                    <Link
+                      // className='router_link'
+                      href={`/${retCatg(showcasePost[0].category)}/story/${
+                        showcasePost[0].post_id
+                      }`}
+                    >
+                      <a>
+                        <h1 className="show_main_title">
+                          {showcasePost[0].title}
+                        </h1>
+                      </a>
+                    </Link>
                   </div>
                 </div>
               </div>
               <div className="showcase_bottom">
                 <div className="btm_news_1">
-                  <p>
-                    Trauma in House gallery bonds members of Congress even a
-                    year later
-                  </p>
+                  <Link
+                    href={`/${retCatg(showcasePost[2].category)}/story/${
+                      showcasePost[2].post_id
+                    }`}
+                    passHref
+                  >
+                    <a>
+                      <p className="router_link">{showcasePost[2].title}</p>
+                    </a>
+                  </Link>
                 </div>
                 <div className="btm_news_2">
-                  <p>
-                    As Capitol riot anniversary nears, Western allies fear for
-                    health of U.S. democracy
-                  </p>
+                  <Link
+                    href={`/${retCatg(showcasePost[3].category)}/story/${
+                      showcasePost[3].post_id
+                    }`}
+                    passHref
+                  >
+                    <a>
+                      <p className="router_link">{showcasePost[3].title}</p>
+                    </a>
+                  </Link>
                 </div>
                 <div className="btm_news_3">
-                  <p>
-                    A photographer’s helmet cam captured the Jan. 6 assault on
-                    the Capitol
-                  </p>
+                  <Link
+                    href={`/${retCatg(showcasePost[4].category)}/story/${
+                      showcasePost[4].post_id
+                    }`}
+                    passHref
+                  >
+                    <a>
+                      <p className="router_link">{showcasePost[4].title}</p>
+                    </a>
+                  </Link>
                 </div>
               </div>
             </div>
             <LineBreaker mode="thick" width="full" />
             {/* !TOP STORIES */}
-            <TopStories />
+            <TopStories posts={allpost.filter((pt) => pt.top_story == 'true')} />
           </div>
 
           {/* !RIGHT BAR */}
@@ -140,7 +193,7 @@ const Home = () => {
             {/* !RIGHT BAR OPINIONS */}
             <div className="right_bar_opinion">
               <div className="right_opionion_bar">
-                <h3>OPINION</h3>{" "}
+                <h3>Articles</h3>{" "}
                 <FontAwesomeIcon
                   style={{ marginLeft: 7 }}
                   icon={faArrowRight}
@@ -148,45 +201,17 @@ const Home = () => {
               </div>
               <LineBreaker />
 
-              <div className="right_bar_opinion_content">
+              {allpost?.filter((pt) => pt.category.includes("Article")).map((article) => (
+                <React.Fragment>
+                  <div className="right_bar_opinion_content">
                 <p>
-                  {" "}
-                  Editorial: Where are the COVID tests Newsom promised for
-                  schools?{" "}
+                  {article.title}
                 </p>
               </div>
               <LineBreaker />
-              <div className="right_bar_opinion_content">
-                <p>
-                  {" "}
-                  Jonah Goldberg: ‘Don’t Look Up’ is a political satire that
-                  misses its target{" "}
-                </p>
-              </div>
-              <LineBreaker />
-              <div className="right_bar_opinion_content">
-                <p>
-                  {" "}
-                  Editorial: Where are the COVID tests Newsom promised for
-                  schools?{" "}
-                </p>
-              </div>
-              <LineBreaker />
-              <div className="right_bar_opinion_content">
-                <p>
-                  {" "}
-                  Editorial: Where are the COVID tests Newsom promised for
-                  schools?{" "}
-                </p>
-              </div>
-              <LineBreaker />
-              <div className="right_bar_opinion_content">
-                <p>
-                  {" "}
-                  Editorial: Where are the COVID tests Newsom promised for
-                  schools?{" "}
-                </p>
-              </div>
+                </React.Fragment>
+              ))}
+
             </div>
             <br />
             <LineBreaker mode="thick" width={98} />

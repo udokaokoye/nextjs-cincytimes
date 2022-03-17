@@ -1,21 +1,34 @@
 import React from "react";
 import LineBreaker from "../Line Breaker/LineBreaker";
 // import './TopStories.css'
-const TopStories = () => {
+import Image from "next/image";
+import Link from "next/link";
+const TopStories = ({ posts }) => {
+  const retCatg = (catg = []) => {
+    if (catg.split(",")) {
+      return catg.split(",")[0];
+    } else {
+      return 0;
+    }
+  };
   return (
     <div className="topstories_container">
       <div className="topstor_bar">
-        <h3>Top Stories.</h3>
+        <h3 onClick={() => console.log(posts)}>Top Stories.</h3>
       </div>
       <LineBreaker />
 
       <div className="topstor_content_wrapper">
         <div className="topstor_side_content">
           <div className="side_content_w_related">
-            <h1>
-              As Covid cases explode in California, next few weeks are
-              ‘absolutely critical’
-            </h1>
+            <Link
+              href={`/${retCatg(posts[3].category)}/story/${posts[3].post_id}`}
+              passHref
+            >
+              <a>
+                <h1>{posts[3].title}</h1>
+              </a>
+            </Link>
 
             <div className="side_content_related">
               <p>Related</p>
@@ -27,23 +40,40 @@ const TopStories = () => {
           </div>
           <LineBreaker />
           <div className="side_content_w_img">
-            <div className="side_content_media">
-              <img
+            <Link
+              href={`/${retCatg(posts[2].category)}/story/${posts[2].post_id}`}
+              passHref
+            >
+              <a>
+                <div className="side_content_media">
+                  {/* <img
                 src={require("../../Assets/Demo/Henry-Cuellar-Kamala-Harris.jpg").default.src}
                 alt=""
-              />
-            </div>
-            <h3>
-              California adopts droughtrules outlawing water wasting, with fines
-              of upto $500
-            </h3>
+              /> */}
+                  <Image
+                    src={`http://192.168.1.158/cincinnatitimes/${posts[2].show_img}`}
+                    alt=""
+                    class="img"
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL="../../Assets/Logos/small logo.png"
+                  />
+                </div>
+                <h3>{posts[2].title}</h3>
+              </a>
+            </Link>
           </div>
           <LineBreaker />
           <div className="side_content_w_related">
-            <h1>
-              As Covid cases explode in California, next few weeks are
-              ‘absolutely critical’
-            </h1>
+            <Link
+              href={`/${retCatg(posts[4].category)}/story/${posts[4].post_id}`}
+              passHref
+            >
+              <a>
+                <h1>{posts[4].title}</h1>
+              </a>
+            </Link>
 
             <div className="side_content_related">
               <p>Related</p>
@@ -62,16 +92,42 @@ const TopStories = () => {
           <div className="topstor_section_1">
             <div className="side_left">
               <div className="side_left_media">
-                <img
+                {/* <img
                   src={require("../../Assets/Demo/7fee440bf94f8b7b28950425ea11e562.jpg").default.src}
                   alt="asf"
-                />
+                /> */}
+
+                <Link
+                  href={`/${retCatg(posts[0].category)}/story/${
+                    posts[0].post_id
+                  }`}
+                  passHref
+                >
+                  <a>
+                    <Image
+                      src={`http://192.168.1.158/cincinnatitimes/${posts[0].show_img}`}
+                      alt=""
+                      class="img"
+                      layout="fill"
+                      objectFit="contain"
+                      placeholder="blur"
+                      blurDataURL="../../Assets/Logos/small logo.png"
+                    />
+                  </a>
+                </Link>
               </div>
 
-              <h2 className="side_left_content_title">
-                Will Kawhi Leonard play this season? Tyronn Lue senses optimism
-                from Clippers star
-              </h2>
+              <Link
+                href={`/${retCatg(posts[0].category)}/story/${
+                  posts[0].post_id
+                }`}
+                passHref
+              >
+                <a>
+                  <h2 className="side_left_content_title">{posts[0].title}</h2>
+                </a>
+              </Link>
+
               <div className="side_left_content">
                 <div className="side_left_catgr_1">
                   <p className="catgr_title">Opinion</p>
@@ -136,26 +192,114 @@ const TopStories = () => {
                 </p>
               </div>
             </div>
+
+
+
+            <div className="side_right_mobile">
+              <div className="side_right_content">
+              <Link
+              href={`/${retCatg(posts[3].category)}/story/${posts[3].post_id}`}
+              passHref
+            >
+              <a>
+                <h1>{posts[3].title}</h1>
+              </a>
+            </Link>
+            <Link
+              href={`/${retCatg(posts[3].category)}/story/${posts[3].post_id}`}
+              passHref
+            >
+              <a>
+                <p>{posts[3].summary}</p>
+              </a>
+            </Link>
+              </div>
+              <LineBreaker mode={"thin"} />
+              <div className="side_right_content">
+              <Link
+              href={`/${retCatg(posts[2].category)}/story/${posts[2].post_id}`}
+              passHref
+            >
+              <a>
+                <h1>{posts[2].title}</h1>
+              </a>
+            </Link>
+            <Link
+              href={`/${retCatg(posts[2].category)}/story/${posts[2].post_id}`}
+              passHref
+            >
+              <a>
+                <p>{posts[2].summary}</p>
+              </a>
+            </Link>
+              </div>
+              <LineBreaker mode={"thin"} />
+
+              <div className="side_right_content">
+              <Link
+              href={`/${retCatg(posts[4].category)}/story/${posts[4].post_id}`}
+              passHref
+            >
+              <a>
+                <h1>{posts[4].title}</h1>
+              </a>
+            </Link>
+            <Link
+              href={`/${retCatg(posts[4].category)}/story/${posts[4].post_id}`}
+              passHref
+            >
+              <a>
+                <p>{posts[4].summary}</p>
+              </a>
+            </Link>
+              </div>
+            </div>
           </div>
           <LineBreaker width="97" />
           <div className="topstor_section_2">
             <div className="side_left">
               <div className="side_left_content">
                 <div className="side_left_content_media">
-                  <img
+                  {/* <img
                     src={require("../../Assets/Demo/download (1).png").default.src}
                     alt=""
-                  />
+                  /> */}
+
+                  <Link
+                    href={`/${retCatg(posts[1].category)}/story/${
+                      posts[1].post_id
+                    }`}
+                    passHref
+                  >
+                    <a>
+                      <Image
+                        src={`http://192.168.1.158/cincinnatitimes/${posts[1].show_img}`}
+                        alt=""
+                        class="img"
+                        layout="fill"
+                        objectFit="contain"
+                        placeholder="blur"
+                        blurDataURL="../../Assets/Logos/small logo.png"
+                      />
+                    </a>
+                  </Link>
                 </div>
-                <h4 className="side_left_content_title">
-                  It’s March 2020 COVID deja vu for UC students as the new term
-                  begins
-                </h4>
-                <p className="side_left_content_description">
-                  College students compare the remote start of 2022 to March
-                  2020, when a two-week shutdown turned into a months-long
-                  hiatus from campus.
-                </p>
+
+                <Link
+                  href={`/${retCatg(posts[1].category)}/story/${
+                    posts[1].post_id
+                  }`}
+                  passHref
+                >
+                  <a>
+                    <h4 className="side_left_content_title">
+                      {posts[1].title}
+                    </h4>
+                    <p className="side_left_content_description">
+                      {posts[1].summary}
+                    </p>
+                  </a>
+                </Link>
               </div>
               <LineBreaker width="95" />
 
@@ -202,10 +346,22 @@ const TopStories = () => {
             <div className="side_right">
               <div className="side_right_content">
                 <div className="side_right_content_media">
-                  <img
+                  {/* <img
                     
                     src={require("../../Assets/Demo/download22.png").default.src}
                     alt=""
+                  /> */}
+
+                  <Image
+                    src={
+                      require("../../Assets/Demo/download22.png").default.src
+                    }
+                    alt=""
+                    class="img"
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">
@@ -217,10 +373,22 @@ const TopStories = () => {
 
               <div className="side_right_content">
                 <div className="side_right_content_media">
-                  <img
+                  {/* <img
                     src={require("../../Assets/Demo/download22.png").default.src}
                     layout='fill' objectFit='cover'
                     alt=""
+                  /> */}
+
+                  <Image
+                    src={
+                      require("../../Assets/Demo/download22.png").default.src
+                    }
+                    alt=""
+                    class="img"
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">
@@ -232,10 +400,22 @@ const TopStories = () => {
 
               <div className="side_right_content">
                 <div className="side_right_content_media">
-                  <img
+                  {/* <img
                     src={require("../../Assets/Demo/download22.png").default.src}
                     layout='fill' objectFit='cover'
                     alt=""
+                  /> */}
+
+                  <Image
+                    src={
+                      require("../../Assets/Demo/download22.png").default.src
+                    }
+                    alt=""
+                    class="img"
+                    layout="fill"
+                    objectFit="contain"
+                    placeholder="blur"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">

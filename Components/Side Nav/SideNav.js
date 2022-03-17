@@ -20,22 +20,22 @@ const SideNav = ({setsideToggle}) => {
 
             <div className="side_bar_news_list">
                 <div className="left">
-                    <Link onClick={() => disableSidebar()} href={'/'} className='side_nav_links'>Home</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/ohio'} className='side_nav_links'>Ohio</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/entertainment'} className='side_nav_links'>Entertainment</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/crime'} className='side_nav_links'>Crime</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/sport'} className='side_nav_links'>Sport</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/business'} className='side_nav_links'>Business</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/lifestyle'} className='side_nav_links'>Lifestyle</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/politcs'} className='side_nav_links'>Politics</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/travel'} className='side_nav_links'>Travel</Link>
-                    <Link onClick={() => disableSidebar()} href={'/category/world'} className='side_nav_links'>World & Nation</Link>
+                    <Link onClick={() => disableSidebar()} href={'/'}><span className='side_nav_links'>Home</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/ohio'}><span className='side_nav_links'>Ohio</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/entertainment'}><span className='side_nav_links'>Entertainment</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/crime'}><span className='side_nav_links'>Crime</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/sport'}><span className='side_nav_links'>Sport</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/business'}><span className='side_nav_links'>Business</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/lifestyle'}><span className='side_nav_links'>Lifestyle</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/politcs'}><span className='side_nav_links'>Politics</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/travel'}><span className='side_nav_links'>Travel</span></Link>
+                    <Link onClick={() => disableSidebar()} href={'/category/world'}><span className='side_nav_links'>World & Nation</span></Link>
                 </div>
                 <div className="right">
-                    <Link onClick={() => disableSidebar()} href={"#"} className='side_nav_links'>Super Bowl</Link>
-                    <Link onClick={() => disableSidebar()} href={"#"} className='side_nav_links'>Oplympics</Link>
-                    <Link onClick={() => disableSidebar()} href={"#"} className='side_nav_links'>Russia Vs Ukraine</Link>
-                    <Link onClick={() => disableSidebar()} href={"#"} className='side_nav_links'>Covid-19</Link>
+                    <Link onClick={() => disableSidebar()} href={"#"}><span className='side_nav_links_specs'>Super Bowl</span></Link>
+                    <Link onClick={() => disableSidebar()} href={"#"}><span className='side_nav_links_specs'>Oplympics</span></Link>
+                    <Link onClick={() => disableSidebar()} href={"#"}><span className='side_nav_links_specs'>Russia Vs Ukraine</span></Link>
+                    <Link onClick={() => disableSidebar()} href={"#"}><span className='side_nav_links_specs'>Covid-19</span></Link>
                 </div>
             </div>
 

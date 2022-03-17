@@ -32,6 +32,7 @@ span {
   background-color: transparent !important;
   background: none;
   -webkit-tap-highlight-color: none !important;
+  cursor: pointer !important;
 }
 
 .router_link:visited {
@@ -138,7 +139,7 @@ span {
 
 .container .container-wrapper .main_content .showcase .showcase_top .showcase_main .show_main_media {
   width: 100%;
-  height: inherit;
+  max-height: 400px;
   -o-object-fit: cover;
      object-fit: cover;
 }
@@ -370,6 +371,9 @@ span {
     display: -webkit-box;
     display: -ms-flexbox;
     display: flex;
+  }
+  .container .container-wrapper .main_content .showcase .showcase_bottom .btm_news_2, .container .container-wrapper .main_content .showcase .showcase_bottom .btm_news_3 {
+    padding-left: 0px !important;
   }
   .container .container-wrapper .right_bar {
     display: none;

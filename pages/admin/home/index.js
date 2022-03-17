@@ -1,80 +1,82 @@
 import {
-    faClipboard,
-    faEye,
-    faForward,
-    faHandPaper,
-    faPaperclip,
-    faPen,
-    faPlus,
-    faShare,
-    faUserAlt,
-  } from "@fortawesome/free-solid-svg-icons";
-  import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
-  import React from "react";
+  faClipboard,
+  faEye,
+  faForward,
+  faHandPaper,
+  faPaperclip,
+  faPen,
+  faPlus,
+  faShare,
+  faUserAlt,
+} from "@fortawesome/free-solid-svg-icons";
+import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
+import React, {useEffect} from "react";
 import AdminNav from "../../../Components/AdminNav/AdminNav";
-  const AdminHome = () => {
-    return (
-      <>
+import {GetStaff, useIsAdminLoggedIn} from '../../../lib/swr-hooks'
+import { useRouter } from "next/dist/client/router";
+const AdminHome = () => {
+  const router  = useRouter()
+  const {staffId, staffLoggedIn} = useIsAdminLoggedIn()
+  const {staff, isLoad} = GetStaff(staffId)
+
+  useEffect(() => {
+    if (!staffLoggedIn) {
+      router.push('/admin')
+    }
+  }, [])
+  
+
+  // useEffect(() => {
+  //     alert(staff?.fname)
+  // }, [isLoad, staffId])
+
+  if (isLoad) {
+    return (<h1>Loader</h1>)
+  }
+  
+
+  return (
+    <>
       <AdminNav />
       <div className="admin_container">
         <div className="admin_wrapper">
           <div className="admin_dashboard">
-            <div className="profile_img_role">
-              <div className="profile_img"></div>
-  
-              <h3>Editor</h3>
-            </div>
-            <div className="profile_info">
-              <h1>Udochukwuka Levi Okoye</h1>
-              <h5>Registerd: 11/05/2020</h5>
-              <h5>Registerd Department: Editorial</h5>
-              <h5>E-mail: levi@thecincytimes.com</h5>
-  
-              <button className="pending_tasks">
-                View all pending Tasks (10)
-              </button>
-              <button className="assign_tasks">
-                Assign Task <FontAwesomeIcon icon={faClipboard} />
-              </button>
-            </div>
+            <div className="profile_img">{staff?.fname[0]}</div>
+
+            <div className="profile_info">{staff?.fname} {staff?.lname} <br /> <button>Logout</button></div>
           </div>
-  
+
           <div className="quicklinks">
-              <h3>Quick Link</h3>
-            <div className="rw1">
-              <div className="qlink1">
-                  <div className="icn"><FontAwesomeIcon icon={faPlus} /></div>
-                  <h3>Add Post</h3>
-              </div>
-              <div className="qlink1">
-              <div className="icn"><FontAwesomeIcon icon={faEye} /></div>
-                  <h3>View Post</h3>
-              </div>
-              <div className="qlink1">
-              <div className="icn"><FontAwesomeIcon icon={faPen} /></div>
-                  <h3>Edit Post</h3>
+            <h1>Quick Link</h1>
+
+            <div className="sec sec1">
+              <h3>Update Live Links In Home Page</h3>
+              <input type="checkbox" /> <span>Add 🔴 Live Link</span>
+              <br />
+              <div className="double_input">
+                <input type="text" placeholder="Enter Live Link Title" />
+                <input type="text" placeholder="Enter Live Link Post ID" />
               </div>
             </div>
-            <div className="rw2">
-              <div className="qlink1">
-              <div className="icn"><FontAwesomeIcon icon={faUserAlt} /></div>
-                  <h3>View Users</h3>
-              </div>
-              <div className="qlink1">
-              <div className="icn"><FontAwesomeIcon icon={faUserAlt} /></div>
-                  <h3>View Users</h3>
-              </div>
-              <div className="qlink1">
-              <div className="icn"><FontAwesomeIcon icon={faUserAlt} /></div>
-                  <h3>View Users</h3>
+
+            <div className="sec sec1">
+              <h3>Update Hot Topics Bar</h3>
+              
+              <div className="double_input">
+                <input type="text" placeholder="Enter Hot Topic Title" />
+                <select>
+                  <option value="">Select Topic Category</option>
+                  <option value="">Entertainment</option>
+                  <option value="">Sport</option>
+                  <option value="">Health</option>
+                </select>
               </div>
             </div>
           </div>
         </div>
       </div>
-      </>
-    );
-  };
-  
-  export default AdminHome;
-  
+    </>
+  );
+};
+
+export default AdminHome;

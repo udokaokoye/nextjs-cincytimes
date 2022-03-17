@@ -75,9 +75,31 @@
         justify-content: center;
         align-items: center;
         cursor: pointer;
+        position: relative;
 
         .menu {
             display: none;
+        }
+
+        .acct_drpdwn {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            position: absolute;
+            z-index: 5;
+            top: 48.3px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            p {
+                cursor: pointer;
+
+                &:last-child {
+                    color: rgb(255, 74, 74);
+                }
+            }
         }
     }
 }

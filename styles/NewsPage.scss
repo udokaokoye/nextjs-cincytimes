@@ -120,20 +120,26 @@
 
     .img_media {
       width: 100%;
-      height: auto;
+      height: 500px;
+      overflow: hidden;
       // background: #ee4f;
-      img {
+      position: relative;
+      .img {
         width: 100%;
-        height: 500px;
-        object-fit: cover;
-        overflow: hidden;
+        // height: 500px !important;
+        object-fit: cover !important;
+        object-position: center;
+        // overflow: hidden;
       }
-      .media_description {
-        font-family: "roboto";
-        font-size: 13px;
-        color: rgb(119, 119, 119);
-        font-style: italic;
-      }
+
+    }
+
+    .media_description {
+      padding-top: 50px;
+      font-family: "roboto";
+      font-size: 13px;
+      color: rgb(119, 119, 119);
+      font-style: italic;
     }
 
     .author {
@@ -181,6 +187,22 @@
         border-left: 5px solid rgb(179, 179, 179);
         font-style: italic !important;
         font-weight: 300;
+      }
+
+      .content_media {
+        width: 100%;
+        height: auto;
+        overflow: hidden;
+        // background: #ee4f;
+        position: relative;
+        .img {
+          width: 100%;
+          // height: 500px !important;
+          object-fit: cover !important;
+          object-position: center;
+          // overflow: hidden;
+        }
+  
       }
 
       .img_media {

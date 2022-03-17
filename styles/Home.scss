@@ -35,6 +35,7 @@ span {
   background-color: transparent !important;
   background: none;
   -webkit-tap-highlight-color: none !important;
+  cursor: pointer !important;
   }
 
   &:visited {
@@ -135,7 +136,7 @@ span {
 
             .show_main_media {
               width: 100%;
-              height: inherit;
+              max-height: 400px;
               object-fit: cover;
             }
 
@@ -388,6 +389,10 @@ span {
 
           .showcase_bottom {
             display: flex;
+
+            .btm_news_2, .btm_news_3 {
+              padding-left: 0px !important;
+            }
           }
         }
       }

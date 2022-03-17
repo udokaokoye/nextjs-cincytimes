@@ -1,5 +1,6 @@
 import React from "react";
 import LineBreaker from "../Line Breaker/LineBreaker";
+import Image from "next/image";
 // import './HomeNewsCategory.css';
 const HomeNewsCategory = ({ categoryName }) => {
   return (
@@ -12,9 +13,19 @@ const HomeNewsCategory = ({ categoryName }) => {
       <div className="newscatg_wrapper">
         <div className="main_content">
           <div className="media">
-            <img
+            {/* <img
               src={require("../../Assets/Demo/bidenchristmas.jpg").default.src}
               alt=""
+            /> */}
+
+<Image
+              src={require("../../Assets/Demo/bidenchristmas.jpg").default.src}
+              alt=""
+              class="img"
+              layout='fill'
+              objectFit='contain'
+              placeholder="blur"
+              blurDataURL="../../Assets/Logos/small logo.png"
             />
           </div>
 

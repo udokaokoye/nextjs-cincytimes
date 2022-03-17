@@ -12,9 +12,21 @@ import {
 import HotTopics from "../Hot Topics/HotTopics";
 import Link from "next/link";
 import SideNav from "../Side Nav/SideNav";
+import { useIsLoggedIn, GetUser } from "../../lib/swr-hooks";
+import LineBreaker from "../Line Breaker/LineBreaker";
+import { useCookies } from "react-cookie";
 
 const HeaderNav = () => {
   const [sideToggle, setsideToggle] = useState(false);
+  const [headerAcctDropdown, setheaderAcctDropdown] = useState(false)
+  const {userId, loggedin} = useIsLoggedIn()
+  const {users} = GetUser(userId)
+  const [cookies, setCookie, removeCookie] = useCookies(["user"]);
+
+  const Logout = () => {
+    removeCookie('user')
+    setheaderAcctDropdown(false)
+  }
 
 //       if (typeof window !== 'undefined') {
 //   function disableScroll() {
@@ -61,16 +73,26 @@ const HeaderNav = () => {
           <span>
             <FontAwesomeIcon icon={faCloudRain} className="weather_icn" /> 32°F
           </span>
-          <Link
-            style={{ display: sideToggle ? "none" : "block" }}
-            passHref
-            href="/"
-            className="router_link"
-          >
-            <div className="mobile_aut_btn">
-              <FontAwesomeIcon icon={faUser} />
-            </div>
-          </Link>
+              {!loggedin ? (
+                          <Link
+                          passHref
+                          href="/auth"
+                          className="router_link"
+                        >
+                          <div 
+                          style={{ display: sideToggle ? "none" : "block" }} className="mobile_aut_btn">
+                            <FontAwesomeIcon icon={faUser} />
+                          </div>
+                        </Link>
+              ) : (
+
+                <div style={{ display: sideToggle ? "none" : "block" }} onClick={() => setheaderAcctDropdown(!headerAcctDropdown)} className="mobile_aut_btn">
+                  <div className="nav_profile_image">
+                  {users?.u_fname[0]}
+                    </div>
+                </div>
+
+              )}
           <div
             onClick={() => {
               toggleNav();
@@ -82,14 +104,22 @@ const HeaderNav = () => {
           </div>
         </div>
       </section>
+      <div style={{display: headerAcctDropdown ? 'block' : 'none'}} className="acct_header_drpdwn">
+          <p>Account</p>
+          <p>Subscription</p>
+          <LineBreaker />
+          <p onClick={() => Logout()}>Logout</p>
+          </div>
       <div className="sas">
-        <div className="mobile_date_weather_login">
+        {/* <div className="mobile_date_weather_login">
           <div className="mobile_info_wrapper">
             <span className="date">Wednesday, December 22, 2021</span>
             <span className="weather">45°F</span>
             <span className="login">LOG IN</span>
           </div>
-        </div>
+        </div> */}
+
+
         <div
           className="side_nav"
           style={{ display: sideToggle ? "block" : "none" }}

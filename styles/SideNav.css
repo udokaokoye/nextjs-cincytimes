@@ -90,6 +90,15 @@
           flex-direction: column;
 }
 
+.sideNav_container .side_bar_news_list .right .side_nav_links_specs {
+  color: #0e8cac;
+  text-decoration: none;
+  font-family: 'Roboto';
+  font-weight: bold;
+  font-size: 17px;
+  margin-bottom: 20px !important;
+}
+
 .sideNav_container .side_subscribe {
   margin-top: 20px;
   display: -webkit-box;

@@ -16,7 +16,7 @@ const EditNews = () => {
         if (confirm("Are you sure you want to delete this post, this action cannot be undone")) {
             formData.append('post_id', pid)
 
-            fetch('http://192.168.1.158/cincinnatitimes/remove_post.php', {
+            fetch('https://api.thecincinnatitimes.com/remove_post.php', {
                 method: 'post',
                 body: formData
             }).then((res) => res.json()).then((data) => {
@@ -47,7 +47,7 @@ useEffect(() => {
                 <div key={post?.post_id} className="post">
                 <Link href={"#"}>
                   <div className="media">
-                  <img src={`http://192.168.1.158/cincinnatitimes/${post.show_img}`} alt="asdasd" />
+                  <img src={`https://api.thecincinnatitimes.com/${post.show_img}`} alt="asdasd" />
                   </div>
                 </Link>
                 <div className="title_summ">
@@ -81,7 +81,7 @@ useEffect(() => {
                 <div key={post?.post_id} className="post">
                 <Link href={"#"}>
                   <div className="media">
-                  <img src={`http://192.168.1.158/cincinnatitimes/${post.show_img}`} alt="asdasd" />
+                  <img src={`https://api.thecincinnatitimes.com/${post.show_img}`} alt="asdasd" />
                   </div>
                 </Link>
                 <div className="title_summ">

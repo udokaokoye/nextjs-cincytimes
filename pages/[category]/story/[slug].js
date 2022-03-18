@@ -1,6 +1,5 @@
 import Editor from "../../../Components/Editor";
 import Head from "next/head";
-import DOMPurify from 'isomorphic-dompurify';
 import {
   faFacebook,
   faFacebookMessenger,
@@ -149,23 +148,6 @@ const NewsPage = ({postsData}) => {
     );
   }, []);
 
-  // useEffect(() => {
-
-  //   if (isLoad) {
-  //     return (
-  //       <h1>LOADER</h1>
-  //     )
-  //   }
-
-  // }, [isLoad])
-
-  // useEffect(() => {
-  //   console.log(commentOrder)
-  //   console.log(mutate(`http://192.168.1.158/cincinnatitimes/get/get_comments.php?post_id=${renderPost.post_id}&order=${commentOrder ? 'ASC' : 'ACS'}`))
-  // }, [commentOrder])
-  
-// const DOMPurify = require('isomorphic-dompurify');
-
   const getCommentsHandler = () => {
     comments = GetComments(renderPost?.post_id, commentOrder ? "DESC" : "ASC");
   };
@@ -220,9 +202,9 @@ const NewsPage = ({postsData}) => {
     <>
     <Head>
       <meta charset="UTF-8" />
-      <title>{postsData[0].title}</title>
+      <title>{renderPost?.title}</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-      <meta name="descrition" content={`Hello SummaryySS`} />
+      <meta name="descrition" content={renderPost?.summary} />
       <meta name="viewport" content="width=device-width, initial-scale=1.0" />
 
       <meta property="og:title" content={renderPost?.title} />

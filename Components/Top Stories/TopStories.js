@@ -51,7 +51,7 @@ const TopStories = ({ posts }) => {
                 alt=""
               /> */}
                   <Image
-                    src={`http://192.168.1.158/cincinnatitimes/${posts[2].show_img}`}
+                    src={`https://api.thecincinnatitimes.com/${posts[2].show_img}`}
                     alt=""
                     class="img"
                     layout="fill"
@@ -105,7 +105,7 @@ const TopStories = ({ posts }) => {
                 >
                   <a>
                     <Image
-                      src={`http://192.168.1.158/cincinnatitimes/${posts[0].show_img}`}
+                      src={`https://api.thecincinnatitimes.com/${posts[0].show_img}`}
                       alt=""
                       class="img"
                       layout="fill"
@@ -273,7 +273,7 @@ const TopStories = ({ posts }) => {
                   >
                     <a>
                       <Image
-                        src={`http://192.168.1.158/cincinnatitimes/${posts[1].show_img}`}
+                        src={`https://api.thecincinnatitimes.com/${posts[1].show_img}`}
                         alt=""
                         class="img"
                         layout="fill"

@@ -4,6 +4,7 @@ import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LineBreaker from "../Components/Line Breaker/LineBreaker";
 import TopStories from "../Components/Top Stories/TopStories";
 // import './Home.css'
+import Image from "next/image";
 import Script from "next/script";
 import {
   faArrowRight,
@@ -32,10 +33,9 @@ const Home = () => {
   }
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  let showcasePost = allpost?.filter((ptt) => ptt.trending == 'true');
+  let showcasePost = allpost?.filter((ptt) => ptt.trending == "true");
 
-  useEffect(() => {
-  }, [isLoad]);
+  useEffect(() => {}, [isLoad]);
 
   if (isLoad) {
     return <Loader />;
@@ -53,8 +53,19 @@ const Home = () => {
     <>
       <HeaderNav />
 
-      <Script async defer src="https://platform.twitter.com/widgets.js" charset="utf-8" />
-      <Script sync defer crossorigin="anonymous" src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0" nonce="cdzOg1Ie" />
+      <Script
+        async
+        defer
+        src="https://platform.twitter.com/widgets.js"
+        charset="utf-8"
+      />
+      <Script
+        sync
+        defer
+        crossorigin="anonymous"
+        src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
+        nonce="cdzOg1Ie"
+      />
       <div className="container" id="container">
         <div className="container-wrapper">
           <div className="main_content">
@@ -117,12 +128,23 @@ const Home = () => {
                     }`}
                   >
                     <a>
-                      <img
+                      {/* <img
                         // loader={('default', 500, 75)}
                         className="show_main_media"
-                        src={`http://192.168.1.158/cincinnatitimes/${showcasePost[0].show_img}`}
+                        src={`https://api.thecincinnatitimes.com/${showcasePost[0].show_img}`}
                         alt={showcasePost[0].title}
                         // priority={true}
+                      /> */}
+
+                      <Image
+                        src={`https://api.thecincinnatitimes.com/${showcasePost[0].show_img}`}
+                        alt=""
+                        class="show_main_media"
+                        layout="fill"
+                        objectFit="cover"
+                        objectPosition={'top'}
+                        placeholder="blur"
+                        blurDataURL="../../Assets/Logos/small logo.png"
                       />
                     </a>
                   </Link>
@@ -184,7 +206,9 @@ const Home = () => {
             </div>
             <LineBreaker mode="thick" width="full" />
             {/* !TOP STORIES */}
-            <TopStories posts={allpost.filter((pt) => pt.top_story == 'true')} />
+            <TopStories
+              posts={allpost.filter((pt) => pt.top_story == "true")}
+            />
           </div>
 
           {/* !RIGHT BAR */}
@@ -201,17 +225,16 @@ const Home = () => {
               </div>
               <LineBreaker />
 
-              {allpost?.filter((pt) => pt.category.includes("Article")).map((article) => (
-                <React.Fragment>
-                  <div className="right_bar_opinion_content">
-                <p>
-                  {article.title}
-                </p>
-              </div>
-              <LineBreaker />
-                </React.Fragment>
-              ))}
-
+              {allpost
+                ?.filter((pt) => pt.category.includes("Article"))
+                .map((article) => (
+                  <React.Fragment>
+                    <div className="right_bar_opinion_content">
+                      <p>{article.title}</p>
+                    </div>
+                    <LineBreaker />
+                  </React.Fragment>
+                ))}
             </div>
             <br />
             <LineBreaker mode="thick" width={98} />

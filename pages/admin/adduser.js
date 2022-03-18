@@ -35,7 +35,7 @@ const Adduser = () => {
       formData.append("s_password", password)
       formData.append("reg_by", "demo")
 
-      fetch('http://192.168.1.158/cincinnatitimes/register_staff.php', {
+      fetch('https://api.thecincinnatitimes.com/register_staff.php', {
           method: "POST",
           body: formData
       }).then((res) => res.json()).then((data) => {

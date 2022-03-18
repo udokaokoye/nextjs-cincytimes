@@ -18,7 +18,7 @@ const AdminNewsCategory = () => {
     formData.append("category_name", categoryName);
     formData.append("category_type", categoryType);
 
-    fetch("http://localhost/cincinnatitimes/add_category.php", {
+    fetch("https://api.thecincinnatitimes.com/add_category.php", {
       method: "POST",
       body: formData,
     })

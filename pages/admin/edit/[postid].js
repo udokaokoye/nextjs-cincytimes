@@ -190,7 +190,7 @@ const EditPost = () => {
     // formData.append("caption_4", caption_media_4);
     // formData.append("caption_5", caption_media_5);
 
-    fetch("http://192.168.1.158/cincinnatitimes/edit/edit_post.php", {
+    fetch("https://api.thecincinnatitimes.com/EDIT/edit_post.php", {
       method: "POST",
       body: formData,
     })
@@ -261,7 +261,7 @@ const EditPost = () => {
             <div className="preview_images">
               {pictures?.length > 0 ? pictures.map((pic) => (
                 <div key={pic} className="img">
-                <img src={`http://192.168.1.158/cincinnatitimes/${pic}`} alt="" />
+                <img src={`https://api.thecincinnatitimes.com/${pic}`} alt="" />
                 </div>
               )) : ''}
               </div>

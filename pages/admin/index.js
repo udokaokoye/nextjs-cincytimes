@@ -28,7 +28,7 @@ const AdminAuth = () => {
     formData.append('email', email);
     formData.append('password', logPass);
 
-    fetch('http://192.168.1.158/cincinnatitimes/auth/staff_login.php', {
+    fetch('https://api.thecincinnatitimes.com/AUTH/staff_login.php', {
       method: 'POST',
       body: formData
     }).then((res) => res.json()).then((data) => {

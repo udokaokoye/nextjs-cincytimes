@@ -25,8 +25,6 @@
     "@fortawesome/free-solid-svg-icons": "^5.15.4",
     "@fortawesome/react-fontawesome": "^0.1.16",
     "ckeditor5-custom-build": "file:customCK",
-    "dompurify": "^2.3.6",
-    "isomorphic-dompurify": "^0.18.0",
     "moment": "^2.29.1",
     "next": "12.1.0",
     "php-serialize": "^4.0.2",

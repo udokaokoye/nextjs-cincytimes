@@ -149,7 +149,7 @@ const AddPost = () => {
     // formData.append("caption_4", caption_media_4);
     // formData.append("caption_5", caption_media_5);
 
-    fetch("http://192.168.1.158/cincinnatitimes/add_post.php", {
+    fetch("https://api.thecincinnatitimes.com/add_post.php", {
       method: "POST",
       body: formData,
     })

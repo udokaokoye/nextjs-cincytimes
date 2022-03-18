@@ -144,7 +144,7 @@ const Home = () => {
                         objectFit="cover"
                         objectPosition={'top'}
                         placeholder="blur"
-                        blurDataURL="../../Assets/Logos/small logo.png"
+                        blurDataURL="../../Assets/Logos/placeholder.PNG"
                       />
                     </a>
                   </Link>

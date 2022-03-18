@@ -359,6 +359,7 @@ span {
   }
   .container .container-wrapper .main_content .showcase .showcase_top .showcase_main {
     width: 100%;
+    height: 800px;
   }
   .container .container-wrapper .main_content .showcase .showcase_top .showcase_main .gradient {
     display: none;
@@ -383,6 +384,10 @@ span {
 }
 
 @media only screen and (max-width: 600px) {
+  .container .container-wrapper .main_content .showcase .showcase_top .showcase_main {
+    width: 100%;
+    height: 400px;
+  }
   .container .container-wrapper .main_content .showcase .showcase_bottom {
     display: -webkit-box;
     display: -ms-flexbox;
@@ -419,6 +424,10 @@ span {
 }
 
 @media only screen and (max-width: 400px) {
+  .container .container-wrapper .main_content .showcase .showcase_top .showcase_main {
+    width: 100%;
+    height: 300px;
+  }
   .container .mobile_covid_container {
     display: block;
     margin-top: 20px;

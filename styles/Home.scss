@@ -376,6 +376,7 @@ span {
             }
             .showcase_main {
               width: 100%;
+              height: 800px;
               .gradient {
                 display: none;
               }
@@ -411,6 +412,12 @@ span {
     .container-wrapper {
       .main_content {
         .showcase {
+          .showcase_top {
+            .showcase_main {
+              width: 100%;
+              height: 400px;
+            }
+          }
           .showcase_bottom {
             display: flex;
             flex-direction: column;
@@ -449,6 +456,19 @@ span {
 
  @media only screen and (max-width: 400px) {
   .container {
+
+    .container-wrapper {
+      .main_content {
+        .showcase {
+          .showcase_top {
+            .showcase_main {
+              width: 100%;
+              height: 300px;
+            }
+          }
+        }
+      }
+    }
     .mobile_covid_container {
       display: block;
       margin-top: 20px;

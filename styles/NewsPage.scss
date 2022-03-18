@@ -553,6 +553,8 @@
   .newsPage_container {
     .newsPage_wrapper {
       .img_media {
+        
+      height: 400px;
         img {
           height: 300px;
         }
@@ -604,6 +606,20 @@
   }
 }
 
+@media only screen and (max-width: 550px) {
+  .newsPage_container {
+    .newsPage_wrapper {
+      .img_media {
+        
+      height: 370px;
+      }
+
+  }
+}
+}
+
+
+
 @media only screen and (max-width: 400px) {
   .newsPage_container {
     .newsPage_wrapper {
@@ -615,9 +631,7 @@
         font-size: 19px;
       }
       .img_media {
-        img {
-          height: 250px;
-        }
+        height: 250px;
       }
 
       .top_socialmedia {

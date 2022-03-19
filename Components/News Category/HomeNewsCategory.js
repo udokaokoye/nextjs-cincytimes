@@ -18,12 +18,12 @@ const HomeNewsCategory = ({ categoryName }) => {
               alt=""
             /> */}
 
-<Image
+            <Image
               src={require("../../Assets/Demo/bidenchristmas.jpg").default.src}
               alt=""
               class="img"
-              layout='fill'
-              objectFit='contain'
+              layout="fill"
+              objectFit="contain"
               placeholder="blur"
               blurDataURL="../../Assets/Logos/small logo.png"
             />
@@ -39,7 +39,10 @@ const HomeNewsCategory = ({ categoryName }) => {
         <div className="side_content">
           <div className="left_cnt">
             <div className="left_media">
-              <img src={require("../../Assets/Demo/download22.png").default.src} alt="" />
+              <img
+                src={require("../../Assets/Demo/download22.png").default.src}
+                alt=""
+              />
             </div>
             <div className="left_title">
               <h4>John James announces run for Michigan congressional seat</h4>
@@ -51,30 +54,12 @@ const HomeNewsCategory = ({ categoryName }) => {
               <p>- John James announces run for Michigan congressional seat</p>
               <LineBreaker />
               <p>- John James announces run for Michigan congressional seat</p>
-              <LineBreaker />
-              <p>- John James announces run for Michigan congressional seat</p>
-              <LineBreaker />
             </div>
           </div>
 
           <div className="right_cnt">
             <li>More On {categoryName}</li>
             <div className="links_lst">
-              <p>
-                - John James announces run for Michigan congressional seat{" "}
-                <br /> <span>6m ago</span>
-              </p>
-              <LineBreaker />
-              <p>
-                - John James announces run for Michigan congressional seat{" "}
-                <br /> <span>6m ago</span>
-              </p>
-              <LineBreaker />
-              <p>
-                - John James announces run for Michigan congressional seat{" "}
-                <br /> <span>6m ago</span>
-              </p>
-              <LineBreaker />
               <p>
                 - John James announces run for Michigan congressional seat{" "}
                 <br /> <span>6m ago</span>

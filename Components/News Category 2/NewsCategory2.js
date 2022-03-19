@@ -26,7 +26,6 @@ const NewsCategory2 = ({categoryName, img='download (1).png'}) => {
                             <h3>- John James announces run for Michigan congressional seat</h3>
                             <p>Ms. Kryst, who was also a correspondent for the television show “Extra,” was found dead on Sunday in New York.</p>
                         </div>
-                        <LineBreaker />
                 </div>
 
                 <div className="main_show">
@@ -61,10 +60,7 @@ const NewsCategory2 = ({categoryName, img='download (1).png'}) => {
                       <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
                       <LineBreaker />
                       <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
-                      <LineBreaker />
-                      <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
-                      <LineBreaker />
-                      <p>- John James announces run for Michigan congressional seat <br /> <span>6m ago</span></p>
+
 
                       
                 </div>

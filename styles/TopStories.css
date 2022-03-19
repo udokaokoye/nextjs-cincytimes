@@ -128,12 +128,15 @@
   color: black;
   font-weight: 600;
   font-size: 20px;
+  font-family: 'Slabo 27px';
+}
+
+.topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_1 .side_left .side_left_content_description {
+  margin-top: 10px;
+  font-family: 'Baloo 2';
 }
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_1 .side_left .side_left_content {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
   -webkit-box-pack: justify;
       -ms-flex-pack: justify;
           justify-content: space-between;
@@ -247,12 +250,12 @@
   font-size: 24px;
   font-weight: 600;
   margin-bottom: 5px;
+  font-family: 'Slabo 27px';
 }
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_left .side_left_content:first-child .side_left_content_description {
   font-size: 14px;
-  font-family: 'Franklin';
-  font-weight: 600;
+  font-family: 'Baloo 2';
 }
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_left .side_left_content .side_left_content_media {
@@ -262,15 +265,15 @@
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_left .side_left_content .side_left_content_title {
   font-size: 20px;
-  font-weight: 200;
   margin-bottom: 5px;
+  font-weight: 400;
+  font-family: 'Slabo 27px';
 }
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_left .side_left_content .side_left_content_description {
   font-size: 16px;
-  font-family: 'Franklin';
-  font-weight: 600;
   color: #747474;
+  font-family: 'Baloo 2';
 }
 
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_right {
@@ -300,6 +303,7 @@
 .topstories_container .topstor_content_wrapper .topstor_main_content .topstor_section_2 .side_right .side_right_content .side_right_content_title {
   font-weight: 200;
   font-size: 18px;
+  font-family: 'Slabo 27px';
 }
 
 @media only screen and (max-width: 800px) {

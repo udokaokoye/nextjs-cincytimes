@@ -123,10 +123,16 @@
                         color: rgb(0, 0, 0);
                         font-weight: 600;
                         font-size: 20px;
+                        font-family: 'Slabo 27px';
+                    }
+
+                    .side_left_content_description {
+                        margin-top: 10px;
+                        font-family: 'Baloo 2';
                     }
     
                     .side_left_content {
-                        display: flex;
+                        // display: none !important;
                         justify-content: space-between;
                         font-size: 14px;
                         margin-top: 15px;
@@ -234,12 +240,13 @@
                                 font-size: 24px;
                                 font-weight: 600;
                                 margin-bottom: 5px;
+                                font-family: 'Slabo 27px';
                             }
     
                             .side_left_content_description {
                                 font-size: 14px;
-                                font-family: 'Franklin';
-                                font-weight: 600;
+                                // font-weight: 600;
+                                font-family: 'Baloo 2';
                             }
                         }
 
@@ -250,15 +257,15 @@
                         
                         .side_left_content_title {
                             font-size: 20px;
-                            font-weight: 200;
                             margin-bottom: 5px;
+                            font-weight: 400;
+                            font-family: 'Slabo 27px';
                         }
 
                         .side_left_content_description {
                             font-size: 16px;
-                            font-family: 'Franklin';
-                            font-weight: 600;
                             color: rgb(116, 116, 116);
+                            font-family: 'Baloo 2';
                         }
                     }
                 }
@@ -287,6 +294,7 @@
                         .side_right_content_title {
                             font-weight: 200;
                             font-size: 18px;
+                            font-family: 'Slabo 27px';
                         }
                     }
                 }

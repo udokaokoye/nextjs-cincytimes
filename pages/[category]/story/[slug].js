@@ -225,7 +225,11 @@ const NewsPage = ({postsData}) => {
       {/* Non-Essential, But Recommended */}
       <meta property="og:description" content={renderPost?.summary} />
       <meta property="og:site_name" content="The Cincinnati Times." />
-      <meta name="twitter:image:alt" content={renderPost?.title}></meta>
+      <meta property="twitter:title" content={renderPost?.title} />
+      <meta property="twitter:description" content={renderPost?.summary} />
+      <meta property="twitter:site" content="https://leviokoye.online/" />
+      <meta property="twitter:image" content={`https://api.thecincinnatitimes.com/${pictures[0]}`} />
+      <meta name="twitter:image:alt" content={renderPost?.title} />
     </Head>
     <Script
       async

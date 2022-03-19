@@ -72,7 +72,7 @@ const Home = () => {
             {/* !!SHOWCASE */}
             <div className="showcase">
               <div className="showcase_top">
-                <div className="showcase_content">
+                <div className="showcase_left">
                   <Link
                     // className='router_link'
                     href={`/${retCatg(showcasePost[1].category)}/story/${
@@ -106,6 +106,13 @@ const Home = () => {
                       </Link>
                     </p>
                   </div>
+
+                  <div className="join_conv">
+                    <h3>Join The Conversation For Free!!!</h3>
+                    <input type="email" placeholder="Enter Email" />
+                    <span>By clickin the button, you accept to recieve email notifications</span>
+                    <button>Join Now!</button>
+                    </div>
                 </div>
                 <div className="showcase_main_content">
                   <Link
@@ -120,7 +127,8 @@ const Home = () => {
                   </Link>
                   <p>{showcasePost[0].summary}</p>
                 </div>
-                <div className="showcase_main">
+                <div className="showcase_right">
+                  <div className="showcase_media_container">
                   <Link
                     // className='router_link'
                     href={`/${retCatg(showcasePost[0].category)}/story/${
@@ -128,14 +136,6 @@ const Home = () => {
                     }`}
                   >
                     <a>
-                      {/* <img
-                        // loader={('default', 500, 75)}
-                        className="show_main_media"
-                        src={`https://api.thecincinnatitimes.com/${showcasePost[0].show_img}`}
-                        alt={showcasePost[0].title}
-                        // priority={true}
-                      /> */}
-
                       <Image
                         src={`https://api.thecincinnatitimes.com/${showcasePost[0].show_img}`}
                         alt=""
@@ -163,10 +163,11 @@ const Home = () => {
                       </a>
                     </Link>
                   </div>
-                </div>
-              </div>
-              <div className="showcase_bottom">
-                <div className="btm_news_1">
+                  </div>
+                  
+                  <div className="showcase_bottom">
+                    <li className="trending_now">Trending Now</li>
+                <div className="btm_news_1 btm_news">
                   <Link
                     href={`/${retCatg(showcasePost[2].category)}/story/${
                       showcasePost[2].post_id
@@ -174,11 +175,13 @@ const Home = () => {
                     passHref
                   >
                     <a>
-                      <p className="router_link">{showcasePost[2].title}</p>
+                      <h2 className="router_link">{showcasePost[2].title}</h2>
+                      <p className="btm_news_editior">By Levi Okoye</p>
+                      <li className="btm_news_summary">{showcasePost[2].summary}</li>
                     </a>
                   </Link>
                 </div>
-                <div className="btm_news_2">
+                <div className="btm_news_2 btm_news">
                   <Link
                     href={`/${retCatg(showcasePost[3].category)}/story/${
                       showcasePost[3].post_id
@@ -186,11 +189,12 @@ const Home = () => {
                     passHref
                   >
                     <a>
-                      <p className="router_link">{showcasePost[3].title}</p>
+                      <h2 className="router_link">{showcasePost[3].title}</h2>
+                      <p className="btm_news_editior">By Levi Okoye</p>
                     </a>
                   </Link>
                 </div>
-                <div className="btm_news_3">
+                <div className="btm_news_3 btm_news">
                   <Link
                     href={`/${retCatg(showcasePost[4].category)}/story/${
                       showcasePost[4].post_id
@@ -198,11 +202,15 @@ const Home = () => {
                     passHref
                   >
                     <a>
-                      <p className="router_link">{showcasePost[4].title}</p>
+                      <h2 className="router_link">{showcasePost[4].title}</h2>
+                      <p className="btm_news_editior">By Levi Okoye</p>
                     </a>
                   </Link>
                 </div>
               </div>
+                </div>
+              </div>
+              
             </div>
             <LineBreaker mode="thick" width="full" />
             {/* !TOP STORIES */}

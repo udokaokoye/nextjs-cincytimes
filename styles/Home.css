@@ -359,6 +359,10 @@ span {
   left: 0;
 }
 
+.container .mobile_covid_container {
+  display: none;
+}
+
 .container .categories .mobile_weather_container {
   display: none;
   font-family: 'Lato' !important;

@@ -288,11 +288,11 @@ const Home = () => {
 
         {/* !MOBILE VIEW OF COVID CASES */}
 
-        <div className="mobile_covid_container">
-          <div className="mobile_covid_wrapper">
+        {/* <div className="mobile_covid_container"> */}
+          {/* <div className="mobile_covid_wrapper"> */}
             <CovidTracker mobile="true" />
-          </div>
-        </div>
+          {/* </div> */}
+        {/* </div> */}
 
         <LineBreaker mode="thick" width="full" />
 

@@ -126,7 +126,7 @@ const TopStories = ({ posts }) => {
                 <a>
                   <h2 className="side_left_content_title">{posts[0].title}</h2>
 
-                  <p className="side_left_content_description">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Eligendi id fuga adipisci, praesentium ipsa illum possimus aut neque provident exercitationem fugiat, error aspernatur laborum, omnis facere? Magnam incidunt ab necessitatibus eum? Deleniti fuga illum obcaecati officia corrupti reiciendis, esse, voluptas nesciunt quibusdam blanditiis pariatur, exercitationem possimus aut. Reprehenderit, ab officiis.</p>
+                  <p className="side_left_content_description">{posts[0].summary}</p>
                 </a>
               </Link>
 

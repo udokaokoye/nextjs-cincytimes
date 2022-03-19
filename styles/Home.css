@@ -186,6 +186,7 @@ span {
 
 .container .container-wrapper .main_content .showcase .showcase_top .showcase_main_content {
   display: none;
+  font-family: 'Roboto' !important;
 }
 
 .container .container-wrapper .main_content .showcase .showcase_top .showcase_right {
@@ -365,10 +366,12 @@ span {
 
 .container .categories .mobile_weather_container {
   display: none;
+  font-family: 'Roboto' !important;
 }
 
 .container .categories .mobile_vaccine_container {
   display: none;
+  font-family: 'Roboto' !important;
 }
 
 @media only screen and (max-width: 1316px) {

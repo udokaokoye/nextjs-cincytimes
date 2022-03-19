@@ -226,7 +226,7 @@ span {
 
 .container .container-wrapper .main_content .showcase .showcase_top .showcase_right .gradient .show_main_title {
   color: white;
-  font-family: "Postoni";
+  font-family: 'Roboto' !important;
   padding: 0px 25px;
   text-align: justify;
 }

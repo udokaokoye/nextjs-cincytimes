@@ -9,7 +9,7 @@ h1 {
 
 p,
 span {
-  font-family: "Roboto";
+  font-family: "Lato";
 }
 
 .router_link {
@@ -306,7 +306,7 @@ span {
 }
 
 .container .container-wrapper .right_bar .right_bar_opinion .right_opionion_bar h3 {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-weight: bold;
   font-size: 17px;
 }
@@ -327,7 +327,7 @@ span {
 }
 
 .container .container-wrapper .right_bar .right_bar_weather .weather_br_location h3 {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-size: 17px;
 }
 
@@ -361,12 +361,12 @@ span {
 
 .container .categories .mobile_weather_container {
   display: none;
-  font-family: 'Roboto' !important;
+  font-family: 'Lato' !important;
 }
 
 .container .categories .mobile_vaccine_container {
   display: none;
-  font-family: 'Roboto' !important;
+  font-family: 'Lato' !important;
 }
 
 @media only screen and (max-width: 1316px) {
@@ -423,7 +423,7 @@ span {
   }
   .container .container-wrapper .main_content .showcase .showcase_top .showcase_main_content h1 {
     margin-bottom: 15px;
-    font-family: 'Roboto' !important;
+    font-family: 'Lato' !important;
     font-weight: bolder;
   }
   .container .container-wrapper .main_content .showcase .showcase_top .showcase_main_content p {
@@ -501,7 +501,7 @@ span {
   }
   .container .mobile_covid_container .mobile_covid_wrapper .bar_intro {
     color: purple;
-    font-family: 'Roboto';
+    font-family: 'Lato';
     font-weight: bold;
     font-size: 20px;
   }
@@ -515,7 +515,7 @@ span {
   }
   .container .categories .mobile_weather_container .mobile_weather_wrapper .bar_intro, .container .categories .mobile_weather_container .mobile_vaccine_wrapper .bar_intro, .container .categories .mobile_vaccine_container .mobile_weather_wrapper .bar_intro, .container .categories .mobile_vaccine_container .mobile_vaccine_wrapper .bar_intro {
     color: purple;
-    font-family: 'Roboto';
+    font-family: 'Lato';
     font-weight: bold;
     font-size: 20px;
   }

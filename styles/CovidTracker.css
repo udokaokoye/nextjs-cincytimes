@@ -1,5 +1,5 @@
 .covid_tracker .covid_tracker_bar {
-  font-family: "Roboto";
+  font-family: "Lato";
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -9,14 +9,14 @@
 }
 
 .covid_tracker .covid_tracker_bar h3 {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-weight: bold;
   font-size: 17px;
 }
 
 .covid_tracker .covid_tracker_content .covid_tracker_cases,
 .covid_tracker .covid_tracker_content .covid_tracker_deaths {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-weight: 500;
   width: 70%;
   display: -webkit-box;
@@ -34,7 +34,7 @@
 }
 
 .covid_tracker .covid_tracker_content .covid_tracker_vaccine h3 {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-weight: bold;
   font-size: 14px;
   color: purple;
@@ -42,7 +42,7 @@
 }
 
 .covid_tracker .covid_tracker_content .covid_tracker_vaccine small {
-  font-family: "Roboto";
+  font-family: "Lato";
   font-size: 10px;
   font-style: italic;
   color: #666666;

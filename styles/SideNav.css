@@ -3,7 +3,7 @@
   height: 100%;
   background-color: white;
   color: black;
-  font-family: 'Roboto';
+  font-family: 'Lato';
   border-top: 1px solid #cccc;
   padding-top: 10px;
 }
@@ -93,7 +93,7 @@
 .sideNav_container .side_bar_news_list .right .side_nav_links_specs {
   color: #0e8cac;
   text-decoration: none;
-  font-family: 'Roboto';
+  font-family: 'Lato';
   font-weight: bold;
   font-size: 17px;
   margin-bottom: 20px !important;

@@ -217,10 +217,7 @@ const NewsPage = ({postsData}) => {
         property="og:url"
         content={`https://leviokoye.online/category/story/${renderPost?.post_id}`}
       />
-      <meta
-        name="twitter:card"
-        content={`https://leviokoye.online/cincinnatitimes/${pictures[0]}`}
-      />
+
 
       {/* Non-Essential, But Recommended */}
       <meta property="og:description" content={renderPost?.summary} />

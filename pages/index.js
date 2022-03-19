@@ -49,6 +49,8 @@ const Home = () => {
     }
   };
 
+
+
   return (
     <>
       <HeaderNav />
@@ -139,7 +141,7 @@ const Home = () => {
                       <Image
                         src={`https://api.thecincinnatitimes.com/${showcasePost[0].show_img}`}
                         alt=""
-                        class="show_main_media"
+                        // className="show_main_media"
                         layout="fill"
                         objectFit="cover"
                         objectPosition={'top'}
@@ -236,7 +238,7 @@ const Home = () => {
               {allpost
                 ?.filter((pt) => pt.category.includes("Article"))
                 .map((article) => (
-                  <React.Fragment>
+                  <React.Fragment key={article.post_id}>
                     <div className="right_bar_opinion_content">
                       <p>{article.title}</p>
                     </div>

@@ -72,7 +72,7 @@ const NewsPage = ({postsData}) => {
       `<div class='content_media'>
       
       <Image
-          src='http://192.168.1.158/cincinnatitimes/${pictures[1]}'
+          src='https://api.thecincinnatitimes.com/${pictures[1]}'
           alt=""
           class="img"
           layout='fill'
@@ -88,7 +88,7 @@ const NewsPage = ({postsData}) => {
       "@IMG2",
       `<div class='content_media'>
       <Image
-          src='http://192.168.1.158/cincinnatitimes/${pictures[2]}'
+          src='https://api.thecincinnatitimes.com/${pictures[2]}'
           alt=""
           class="img"
           layout='fill'
@@ -105,7 +105,7 @@ const NewsPage = ({postsData}) => {
       `<div class='content_media'>
       
       <Image
-          src='http://192.168.1.158/cincinnatitimes/${pictures[3]}'
+          src='https://api.thecincinnatitimes.com/${pictures[3]}'
           alt=""
           class="img"
           layout='fill'
@@ -123,7 +123,7 @@ const NewsPage = ({postsData}) => {
       `<div class='content_media'>
       
       <Image
-          src='http://192.168.1.158/cincinnatitimes/${pictures[4]}'
+          src='https://api.thecincinnatitimes.com/${pictures[4]}'
           alt=""
           class="img"
           layout='fill'
@@ -140,7 +140,7 @@ const NewsPage = ({postsData}) => {
       "@VID",
       `<div class='media'>
       <h3>Watch Video Below</h3>
-      <video width='100%' controls src='http://192.168.1.158/cincinnatitimes${
+      <video width='100%' controls src='https://api.thecincinnatitimes.com/${
         renderPost?.video_path
       }' /> <small class='media_description'>${
         renderPost?.media_captions?.split(",")[4]
@@ -163,7 +163,7 @@ const NewsPage = ({postsData}) => {
     formData.append("post_id", renderPost.post_id);
     formData.append("content", commentContent);
 
-    fetch("http://192.168.1.158/cincinnatitimes/add_comment.php", {
+    fetch("https://api.thecincinnatitimes.com/add_comment.php", {
       method: "POST",
       body: formData,
     })
@@ -172,7 +172,7 @@ const NewsPage = ({postsData}) => {
         alert(data);
         setcommentContent("");
         mutate(
-          `http://192.168.1.158/cincinnatitimes/get/get_comments.php?post_id=${renderPost?.post_id}`
+          `https://api.thecincinnatitimes.com/get/get_comments.php?post_id=${renderPost?.post_id}`
         );
       });
   };
@@ -280,10 +280,10 @@ const NewsPage = ({postsData}) => {
             className="img"
             layout="fill"
             objectFit="contain"
-            placeholder="blur"
-            blurDataURL="../../../Assets/Logos/small logo.png"
+            // placeholder="blur"
+            // blurDataURL="../../../Assets/Logos/small logo.png"
           />
-          {/* <img className="img" src={`http://192.168.1.158/cincinnatitimes/${pictures[0]}`} alt="" /> */}
+          {/* <img className="img" src={`https://api.thecincinnatitimes.com/${pictures[0]}`} alt="" /> */}
         </div>
         <small className="media_description">
           {renderPost?.media_captions?.split(",")[0]}

@@ -1,3 +1,7 @@
+b {
+  font-family: inherit;
+}
+
 .ck.ck-editor__main .ck-content {
   min-height: 15vh !important;
 }
@@ -130,7 +134,7 @@
 
 .newsPage_container .newsPage_wrapper .media_description {
   padding-top: 50px;
-  font-family: "roboto";
+  font-family: "Lato";
   font-size: 13px;
   color: #777777;
   font-style: italic;

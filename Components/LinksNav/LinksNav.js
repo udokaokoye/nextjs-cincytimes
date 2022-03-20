@@ -77,7 +77,7 @@ const LinksNav = () => {
                       style={{ color: "white" }}
                       className="router_link auth_nav_btn"
                     >
-                      <span>Sign In <FontAwesomeIcon icon={faUser} /></span>
+                      <span>Sign In <FontAwesomeIcon className="user_icn" icon={faUser} /></span>
                     </Link>
           ) : (
             <span onClick={() => setshowDropDown(!showDropDown)} >{users?.u_fname}  {" "} <FontAwesomeIcon className="dropdown_icn" icon={faAngleDown} /></span>

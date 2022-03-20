@@ -35,7 +35,7 @@ const Home = () => {
 
   let showcasePost = allpost?.filter((ptt) => ptt.trending == "true");
 
-  useEffect(() => {}, [isLoad]);
+
 
   if (isLoad) {
     return <Loader />;

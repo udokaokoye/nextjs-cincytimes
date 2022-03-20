@@ -26,7 +26,7 @@
       -ms-flex-align: center;
           align-items: center;
   color: white;
-  font-family: "Lato";
+  font-family: "Lato" !important;
 }
 
 .links_nav .left .search_bars {
@@ -106,8 +106,13 @@
   position: relative;
 }
 
-.links_nav .right span .dropdown_icn {
-  margin-left: 10px;
+.links_nav .right span {
+  font-weight: 400;
+}
+
+.links_nav .right span .dropdown_icn, .links_nav .right span .user_icn {
+  padding-top: 5px;
+  margin-left: 5px;
 }
 
 .links_nav .right .menu {
@@ -120,7 +125,7 @@
   background: #000;
   position: absolute;
   z-index: 5;
-  top: 48.3px;
+  top: 34.3px;
   right: 0px;
   display: -webkit-box;
   display: -ms-flexbox;

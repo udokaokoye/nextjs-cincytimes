@@ -493,8 +493,8 @@ const NewsPage = ({postsData}) => {
   );
 };
 
-export async function getServerSideProps() {
-  const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=6236cddd6e1f5`).then((res) => res.json())
+export async function getServerSideProps({params}) {
+  const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=${params.slug}`).then((res) => res.json())
     return {
       props: {
         postsData,

@@ -198,7 +198,9 @@ const NewsPage = ({postsData}) => {
       />
       <meta
         property="og:url"
-        content={`https://leviokoye.online/category/story/${renderPost?.post_id}`}
+        content={`https://thecincinnatitimes.com/${retCatg(renderPost.category)}/story/${
+          renderPost.post_id
+        }`}
       />
 
 
@@ -207,7 +209,7 @@ const NewsPage = ({postsData}) => {
       <meta property="og:site_name" content="The Cincinnati Times." />
       <meta property="twitter:title" content={renderPost?.title} />
       <meta property="twitter:description" content={renderPost?.summary} />
-      <meta property="twitter:site" content="https://leviokoye.online/" />
+      <meta property="twitter:site" content="https://thecincinnatitimes.com/" />
       <meta property="twitter:image" content={`https://api.thecincinnatitimes.com/${pictures[0]}`} />
       <meta name="twitter:image:alt" content={renderPost?.title} />
     </Head>

@@ -50,6 +50,10 @@ const NewsPage = ({postsData}) => {
   // const getCommentUser = (userID) => {
   //   return GetUser(userID).users;
   // };
+  useEffect(() => {
+    loggedin, userId
+  }, [postsData])
+  
   const renderPost = post[0];
 
   const pictures = post[1];
@@ -177,27 +181,6 @@ const NewsPage = ({postsData}) => {
       });
   };
 
-
-
-    const CommentEditor = () => {
-      return (
-        <Editor
-                      name={"Comment"}
-                      onChange={(data) => {
-                        setcommentContent(data);
-                      }}
-                      editorLoaded={editorLoaded}
-                      editorConfiguration={editorConfiguration}
-                    />
-      )
-    }
-
-
-
-  // if (isLoad) {
-  //   return <Loader />
-  // } 
-
   return (
     <>
     <Head>
@@ -235,7 +218,7 @@ const NewsPage = ({postsData}) => {
       strategy="beforeInteractive"
     />
     <Script
-      sync
+      async
       defer
       crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
@@ -250,7 +233,7 @@ const NewsPage = ({postsData}) => {
     >
       {/* {isLoad ? <Loader /> : ''} */}
       <div className="newsPage_wrapper">
-        <h1 onClick={() => console.log(postsData[0].title)} className="news_title">{renderPost?.title}</h1>
+        <h1 onClick={() => alert(loggedin)} className="news_title">{renderPost?.title}</h1>
         <p className="news_summary">{renderPost?.summary}</p>
         <LineBreaker />
         <div className="top_socialmedia">
@@ -514,7 +497,7 @@ export async function getServerSideProps({params}) {
   const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=${params.slug}`).then((res) => res.json())
     return {
       props: {
-        postsData
+        postsData,
       }
     }
 }

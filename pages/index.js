@@ -6,6 +6,7 @@ import TopStories from "../Components/Top Stories/TopStories";
 import moment from "moment";
 import Image from "next/image";
 import Script from "next/script";
+import Head from 'next/head'
 import {
   faArrowRight,
   faMapMarkerAlt,

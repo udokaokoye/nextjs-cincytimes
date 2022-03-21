@@ -34,9 +34,10 @@ import { useRouter } from "next/router";
 import HeaderNav from "../../../Components/HeaderNav/HeaderNav";
 import Image from "next/image";
 import Loader from "../../../Components/Loader/Loader";
-const NewsPage = ({postsData}) => {
+const NewsPage = () => {
   const router = useRouter();
   const { slug } = router.query;
+  const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=${params.slug}`).then((res) => res.json())
   const post = postsData;
   const [showComments, setshowComments] = useState(false);
   const [showAddComment, setshowAddComment] = useState(false);
@@ -49,10 +50,12 @@ const NewsPage = ({postsData}) => {
   const history = "";
   // const getCommentUser = (userID) => {
   //   return GetUser(userID).users;
-  // };
-  useEffect(() => {
-    loggedin, userId
-  }, [postsData])
+  // // };
+  // useEffect(() => {
+  //   loggedin, userId
+  // }, [postsData])
+
+
   
   const renderPost = post[0];
 
@@ -493,14 +496,14 @@ const NewsPage = ({postsData}) => {
   );
 };
 
-export async function getServerSideProps({params}) {
-  const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=${params.slug}`).then((res) => res.json())
-    return {
-      props: {
-        postsData,
-      }
-    }
-}
+// export async function getServerSideProps({params}) {
+//   const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=${params.slug}`).then((res) => res.json())
+//     return {
+//       props: {
+//         postsData,
+//       }
+//     }
+// }
 
 // export async function getStaticProps() {
 //   const postsData = await fetch(`https://api.thecincinnatitimes.com/GET/get_post.php?post_id=622fcfce0e6ef`).then((res) => res.json())

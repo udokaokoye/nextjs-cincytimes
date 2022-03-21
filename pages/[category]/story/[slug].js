@@ -57,9 +57,9 @@ const NewsPage = () => {
 
 
   
-  const renderPost = post[0];
+  const renderPost = post.length >0 ? post[0] : [];
 
-  const pictures = post[1];
+  const pictures = [''];
   let newsBody = 'loading';
   const [editorLoaded, setEditorLoaded] = useState(false);
 

@@ -50,6 +50,13 @@ const NewsPage = ({postsData}) => {
   // const getCommentUser = (userID) => {
   //   return GetUser(userID).users;
   // };
+  const retCatg = (catg = []) => {
+    if (catg.split(",")) {
+      return catg.split(",")[0];
+    } else {
+      return 0;
+    }
+  };
   useEffect(() => {
     loggedin, userId
   }, [postsData])

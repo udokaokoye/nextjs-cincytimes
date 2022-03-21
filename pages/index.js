@@ -3,7 +3,7 @@ import Link from "next/link";
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 import LineBreaker from "../Components/Line Breaker/LineBreaker";
 import TopStories from "../Components/Top Stories/TopStories";
-// import './Home.css'
+import moment from "moment";
 import Image from "next/image";
 import Script from "next/script";
 import {
@@ -33,14 +33,6 @@ const Home = () => {
   }
   const dummy = [1, 2, 3, 4, 5, 6, 7, 8, 9, 0];
 
-  let showcasePost = allpost?.filter((ptt) => ptt.trending == "true");
-
-
-
-  if (isLoad) {
-    return <Loader />;
-  }
-
   const retCatg = (catg = []) => {
     if (catg.split(",")) {
       return catg.split(",")[0];
@@ -48,6 +40,26 @@ const Home = () => {
       return 0;
     }
   };
+
+  let showcasePost = allpost?.filter((ptt) => ptt.trending == "true");
+  let politics = allpost?.filter((ptt) => retCatg(ptt.category).includes('Politics'))
+  let crime = allpost?.filter((ptt) => retCatg(ptt.category).includes('Crime'))
+
+  const getDate = (date) => {
+  const is24Hours = moment().diff(moment(date), 'hours') >= 24;
+  if (is24Hours) {
+    return moment(date).format("Do. MMM, YYYY")
+  } else {
+    return moment(date).fromNow()
+  }
+  }
+
+
+  if (isLoad) {
+    return <Loader />;
+  }
+
+
 
 
 
@@ -96,6 +108,7 @@ const Home = () => {
                     cooperate with the government’s investigation. */}
                     {showcasePost[1].summary}
                   </p>
+                  <span className="side_date_category"> <span className="side_date">{getDate(showcasePost[1].date_created)}</span> <span className="side_category">{retCatg(showcasePost[1].category)}</span></span>
 
                   <div className="showcase_content_child">
                     <p className="content_child_header"> More Coverage</p>
@@ -128,6 +141,7 @@ const Home = () => {
                     </a>
                   </Link>
                   <p>{showcasePost[0].summary}</p>
+                  <span className="btm_news_date_category"> <span className="btm_news_date">- {getDate(showcasePost[0].date_created)}</span> <span className="btm_news_category">{retCatg(showcasePost[0].category)}</span></span>
                 </div>
                 <div className="showcase_right">
                   <div className="showcase_media_container">
@@ -164,6 +178,7 @@ const Home = () => {
                         </h1>
                       </a>
                     </Link>
+                    {/* <span>{getDate(showcasePost[0].date_created)}</span> */}
                   </div>
                   </div>
                   
@@ -180,6 +195,7 @@ const Home = () => {
                       <h2 className="router_link">{showcasePost[2].title}</h2>
                       <p className="btm_news_editior">By Levi Okoye</p>
                       <li className="btm_news_summary">{showcasePost[2].summary}</li>
+                      <span className="btm_news_date_category"> <span className="btm_news_date">- {getDate(showcasePost[2].date_created)}</span> <span className="btm_news_category">{retCatg(showcasePost[2].category)}</span></span>
                     </a>
                   </Link>
                 </div>
@@ -193,6 +209,7 @@ const Home = () => {
                     <a>
                       <h2 className="router_link">{showcasePost[3].title}</h2>
                       <p className="btm_news_editior">By Levi Okoye</p>
+                      <span className="btm_news_date_category"> <span className="btm_news_date">- {getDate(showcasePost[3].date_created)}</span> <span className="btm_news_category">{retCatg(showcasePost[3].category)}</span></span>
                     </a>
                   </Link>
                 </div>
@@ -206,6 +223,7 @@ const Home = () => {
                     <a>
                       <h2 className="router_link">{showcasePost[4].title}</h2>
                       <p className="btm_news_editior">By Levi Okoye</p>
+                      <span className="btm_news_date_category"> <span className="btm_news_date">- {getDate(showcasePost[4].date_created)}</span> <span className="btm_news_category">{retCatg(showcasePost[4].category)}</span></span>
                     </a>
                   </Link>
                 </div>
@@ -218,6 +236,7 @@ const Home = () => {
             {/* !TOP STORIES */}
             <TopStories
               posts={allpost.filter((pt) => pt.top_story == "true")}
+              recentTrend={showcasePost.slice(5, showcasePost.length)}
             />
           </div>
 
@@ -299,7 +318,7 @@ const Home = () => {
         {/* CATEGORIES CONTAINER */}
         <div className="categories">
           {/* FIRST NEWS CATEGORY */}
-          <HomeNewsCategory categoryName={"Politcs"} />
+          <HomeNewsCategory posts={politics} categoryName={"Politcs"} />
 
           {/* !MOBILE VIEW OF WEATHER COMPONENT */}
           <div className="mobile_weather_container">
@@ -329,7 +348,7 @@ const Home = () => {
           <LineBreaker mode="thick" width="full" margin={"25"} />
 
           {/* !THIRD NEWS CATEGORY */}
-          <HomeNewsCategory categoryName={"Entertainment"} />
+          <HomeNewsCategory posts={crime} categoryName={"Crime"} />
 
           {/* ! HORIZONTAL ADS */}
           <HorizontalAds />

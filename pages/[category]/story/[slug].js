@@ -232,6 +232,7 @@ const NewsPage = ({postsData}) => {
       async
       src="https://platform.twitter.com/widgets.js"
       charset="utf-8"
+      strategy="beforeInteractive"
     />
     <Script
       sync
@@ -239,6 +240,7 @@ const NewsPage = ({postsData}) => {
       crossorigin="anonymous"
       src="https://connect.facebook.net/en_US/sdk.js#xfbml=1&version=v13.0"
       nonce="cdzOg1Ie"
+      strategy="beforeInteractive"
     />
     <HeaderNav />
 

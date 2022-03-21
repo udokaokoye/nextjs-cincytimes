@@ -1,9 +1,9 @@
-import React from "react";
+import React, {useEffect} from "react";
 import LineBreaker from "../Line Breaker/LineBreaker";
-// import './TopStories.css'
+import moment from "moment";
 import Image from "next/image";
 import Link from "next/link";
-const TopStories = ({ posts }) => {
+const TopStories = ({ posts, recentTrend }) => {
   const retCatg = (catg = []) => {
     if (catg.split(",")) {
       return catg.split(",")[0];
@@ -11,6 +11,16 @@ const TopStories = ({ posts }) => {
       return 0;
     }
   };
+  const post2 = recentTrend;
+  const getDate = (date) => {
+    const is24Hours = moment().diff(moment(date), 'hours') >= 24;
+    if (is24Hours) {
+      return moment(date).format("Do. MMM, YYYY")
+    } else {
+      return moment(date).fromNow()
+    }
+    }
+  
   return (
     <div className="topstories_container">
       <div className="topstor_bar">
@@ -129,6 +139,7 @@ const TopStories = ({ posts }) => {
                   <p className="side_left_content_description">{posts[0].summary}</p>
                 </a>
               </Link>
+              <span className="date_category"> <span className="news_date">- {getDate(posts[0].date_created)}</span> <span className="news_category">{retCatg(posts[0].category)}</span></span>
 
               <div className="side_left_content">
                 <div className="side_left_catgr_1">
@@ -159,39 +170,33 @@ const TopStories = ({ posts }) => {
             <div className="side_right">
               <div className="side_right_content">
                 <h1>
-                  Larry Elder won’t seek rematch against Gov. Gavin Newsom in
-                  2022 race
+                  {posts[5].title}
                 </h1>
                 <p>
-                  The Los Angeles native said that he has instead formed a
-                  political action committee to help Republicans running for the
-                  Senate and House.
+                  {posts[5].summary}
                 </p>
+                <span className="date_category"> <span className="news_date">{getDate(posts[5].date_created)}</span> <span className="news_category">{retCatg(posts[5].category)}</span></span>
               </div>
               <LineBreaker mode={"thin"} />
               <div className="side_right_content">
-                <h1>
-                  Larry Elder won’t seek rematch against Gov. Gavin Newsom in
-                  2022 race
+              <h1>
+                  {posts[6].title}
                 </h1>
                 <p>
-                  The Los Angeles native said that he has instead formed a
-                  political action committee to help Republicans running for the
-                  Senate and House.
+                  {posts[6].summary}
                 </p>
+                <span className="date_category"> <span className="news_date">{getDate(posts[6].date_created)}</span> <span className="news_category">{retCatg(posts[6].category)}</span></span>
               </div>
               <LineBreaker mode={"thin"} />
 
               <div className="side_right_content">
-                <h1>
-                  Larry Elder won’t seek rematch against Gov. Gavin Newsom in
-                  2022 race
+              <h1>
+                  {posts[7].title}
                 </h1>
                 <p>
-                  The Los Angeles native said that he has instead formed a
-                  political action committee to help Republicans running for the
-                  Senate and House.
+                  {posts[7].summary}
                 </p>
+                <span className="date_category"> <span className="news_date">{getDate(posts[7].date_created)}</span> <span className="news_category">{retCatg(posts[7].category)}</span></span>
               </div>
             </div>
 
@@ -215,6 +220,7 @@ const TopStories = ({ posts }) => {
                 <p>{posts[3].summary}</p>
               </a>
             </Link>
+            <span className="date_category"> <span className="news_date">{getDate(posts[3].date_created)}</span> <span className="news_category">{retCatg(posts[3].category)}</span></span>
               </div>
               <LineBreaker mode={"thin"} />
               <div className="side_right_content">
@@ -234,6 +240,7 @@ const TopStories = ({ posts }) => {
                 <p>{posts[2].summary}</p>
               </a>
             </Link>
+            <span className="date_category"> <span className="news_date">{getDate(posts[2].date_created)}</span> <span className="news_category">{retCatg(posts[2].category)}</span></span>
               </div>
               <LineBreaker mode={"thin"} />
 
@@ -254,6 +261,7 @@ const TopStories = ({ posts }) => {
                 <p>{posts[4].summary}</p>
               </a>
             </Link>
+            <span className="date_category"> <span className="news_date">{getDate(posts[4].date_created)}</span> <span className="news_category">{retCatg(posts[4].category)}</span></span>
               </div>
             </div>
           </div>
@@ -302,6 +310,7 @@ const TopStories = ({ posts }) => {
                     </p>
                   </a>
                 </Link>
+                <span className="date_category"> <span className="news_date">{getDate(posts[1].date_created)}</span> <span className="news_category">{retCatg(posts[1].category)}</span></span>
               </div>
               <LineBreaker width="95" />
 
@@ -329,35 +338,15 @@ const TopStories = ({ posts }) => {
                   D.C.
                 </p>
               </div>
-              <LineBreaker width="95" />
 
-              <div className="side_left_content">
-                <h4 className="side_left_content_title">
-                  California adopts drought rules outlawing water wasting, with
-                  fines of up to $500
-                </h4>
-                <p className="side_left_content_description">
-                  WASHINGTON (AP) — A deeply divided Congress is about to show
-                  the world a very unsettled view from the U.S. Capitol: Rather
-                  than a national crisis that pulls the country together, the
-                  deadly riot on{" "}
-                </p>
-              </div>
-              <LineBreaker width="95" />
             </div>
             <div className="side_right">
               <div className="side_right_content">
-                <div className="side_right_content_media">
-                  {/* <img
-                    
-                    src={require("../../Assets/Demo/download22.png").default.src}
-                    alt=""
-                  /> */}
-
+              <Link href={`/${retCatg(recentTrend[0].category)}/story/${recentTrend[0].post_id}`} passHref>
+                  <a>
+                  <div className="side_right_content_media">
                   <Image
-                    src={
-                      require("../../Assets/Demo/download22.png").default.src
-                    }
+                    src={`https://api.thecincinnatitimes.com/${recentTrend[0].show_img}`}
                     alt=""
                     class="img"
                     layout="fill"
@@ -367,24 +356,20 @@ const TopStories = ({ posts }) => {
                   />
                 </div>
                 <h3 className="side_right_content_title">
-                  Listen: Mahershala Ali and Benjamin Cleary on sci-fi drama
-                  ‘Swan Song’
+                  {recentTrend[0].title}
                 </h3>
+                  </a>
+                  </Link>
+                  <span className="date_category"> <span className="news_date">{getDate(recentTrend[0].date_created)}</span> <span className="news_category">{retCatg(recentTrend[0].category)}</span></span>
               </div>
               <LineBreaker width="95" margin="20" />
 
               <div className="side_right_content">
-                <div className="side_right_content_media">
-                  {/* <img
-                    src={require("../../Assets/Demo/download22.png").default.src}
-                    layout='fill' objectFit='cover'
-                    alt=""
-                  /> */}
-
+              <Link href={`/${retCatg(recentTrend[1].category)}/story/${recentTrend[1].post_id}`} passHref>
+                  <a>
+                  <div className="side_right_content_media">
                   <Image
-                    src={
-                      require("../../Assets/Demo/download22.png").default.src
-                    }
+                    src={`https://api.thecincinnatitimes.com/${recentTrend[1].show_img}`}
                     alt=""
                     class="img"
                     layout="fill"
@@ -394,24 +379,20 @@ const TopStories = ({ posts }) => {
                   />
                 </div>
                 <h3 className="side_right_content_title">
-                  Listen: Mahershala Ali and Benjamin Cleary on sci-fi drama
-                  ‘Swan Song’
+                  {recentTrend[1].title}
                 </h3>
+                  </a>
+                  </Link>
+                  <span className="date_category"> <span className="news_date">{getDate(recentTrend[1].date_created)}</span> <span className="news_category">{retCatg(recentTrend[1].category)}</span></span>
               </div>
               <LineBreaker width="95" margin="20" />
 
               <div className="side_right_content">
-                <div className="side_right_content_media">
-                  {/* <img
-                    src={require("../../Assets/Demo/download22.png").default.src}
-                    layout='fill' objectFit='cover'
-                    alt=""
-                  /> */}
-
+              <Link href={`/${retCatg(recentTrend[2].category)}/story/${recentTrend[2].post_id}`} passHref>
+                  <a>
+                  <div className="side_right_content_media">
                   <Image
-                    src={
-                      require("../../Assets/Demo/download22.png").default.src
-                    }
+                    src={`https://api.thecincinnatitimes.com/${recentTrend[2].show_img}`}
                     alt=""
                     class="img"
                     layout="fill"
@@ -421,9 +402,11 @@ const TopStories = ({ posts }) => {
                   />
                 </div>
                 <h3 className="side_right_content_title">
-                  Listen: Mahershala Ali and Benjamin Cleary on sci-fi drama
-                  ‘Swan Song’
+                  {recentTrend[2].title}
                 </h3>
+                  </a>
+                  </Link>
+                  <span className="date_category"> <span className="news_date">{getDate(recentTrend[2].date_created)}</span> <span className="news_category">{retCatg(recentTrend[2].category)}</span></span>
               </div>
               <LineBreaker width="95" margin="20" />
             </div>

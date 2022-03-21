@@ -1,3 +1,25 @@
+.date_category {
+  width: 97%;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: justify;
+      -ms-flex-pack: justify;
+          justify-content: space-between;
+  font-size: 12px;
+  font-family: 'Lato';
+  margin-top: 10px;
+}
+
+.date_category .news_date {
+  font-style: italic;
+}
+
+.date_category .news_category {
+  color: purple;
+  font-weight: bolder;
+}
+
 .topstories_container .topstor_bar h3 {
   font-family: 'Lato' !important;
   font-size: 17px;

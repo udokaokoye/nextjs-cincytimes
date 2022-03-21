@@ -1,3 +1,22 @@
+.date_category {
+    width: 97%;
+    display: flex;
+    justify-content: space-between;
+    font-size: 12px;
+    font-family: 'Lato';
+    margin-top: 10px;
+  
+    .news_date {
+    font-style: italic;
+    }
+  
+    .news_category {
+      color: purple;
+      font-weight: bolder;
+    }
+  }
+
+
 .topstories_container {
     .topstor_bar {
         h3 {

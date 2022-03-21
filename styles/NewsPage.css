@@ -461,7 +461,7 @@ b {
   -webkit-box-align: center;
       -ms-flex-align: center;
           align-items: center;
-  font-family: "Roboto";
+  font-family: "Lato";
   font-weight: bold;
   color: #ffffff;
 }
@@ -479,7 +479,7 @@ b {
 }
 
 .newsPage_container .newsPage_wrapper .comment_content_wrapper .comment_content .commnent_details .user_name {
-  font-family: "Roboto";
+  font-family: "Lato";
 }
 
 .newsPage_container .newsPage_wrapper .comment_content_wrapper .comment_content .commnent_details .location_date {
@@ -493,7 +493,7 @@ b {
 }
 
 .newsPage_container .newsPage_wrapper .comment_content_wrapper .comment_content .commnent_details .comment_txt {
-  font-family: "Roboto";
+  font-family: "Lato";
   line-height: 28px;
 }
 

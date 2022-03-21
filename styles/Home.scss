@@ -195,6 +195,25 @@ span {
           .showcase_main_content {
             display: none;
 
+            .btm_news_date_category {
+              width: 97%;
+              margin: 0 auto;
+              display: flex;
+              justify-content: space-between;
+              font-size: 12px;
+              font-family: 'Lato';
+              margin-bottom: 25px;
+
+              .btm_news_date {
+              font-style: italic;
+              }
+
+              .btm_news_category {
+                color: purple;
+                font-weight: bolder;
+              }
+            }
+
           }
 
           .showcase_right {
@@ -491,7 +510,7 @@ span {
               }
 
               p {
-                margin-bottom: 25px;
+                margin-bottom: 15px;
                 font-family: 'Baloo 2';
               }
             }

@@ -163,6 +163,10 @@ const NewsPage = ({postsData}) => {
     comments = GetComments(renderPost?.post_id, commentOrder ? "DESC" : "ASC");
   };
 
+  function truncate(str, no_words) {
+    return str.split(" ").splice(0,no_words).join(" ");
+  }
+
   const addComment = () => {
     const formData = new FormData();
     if (commentContent == "") {
@@ -192,9 +196,9 @@ const NewsPage = ({postsData}) => {
     <>
     <Head>
       <meta charset="UTF-8" />
-      <title>{renderPost?.title}</title>
+      <title>{truncate(renderPost?.title, 15)}</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-      <meta name="description" content={renderPost?.summary} />
+      <meta name="description" content={truncate(renderPost?.summary, 30)} />
       {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content={renderPost?.title} />

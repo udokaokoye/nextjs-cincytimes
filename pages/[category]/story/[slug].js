@@ -195,10 +195,11 @@ const NewsPage = ({postsData}) => {
       <title>{renderPost?.title}</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
       <meta name="descrition" content={renderPost?.summary} />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content={renderPost?.title} />
-      <meta property="og:type" content="article" />
+      
+      <meta property="og:type" content="website" />
       <meta
         property="og:image"
         content={`https://api.thecincinnatitimes.com/${pictures[0]}`}

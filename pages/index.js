@@ -71,10 +71,12 @@ const Home = () => {
       <title>The Cincinnati Times</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
       <meta name="descrition" content="The Cincinnati Times, News At Your Finger Tips" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content="The Cincinnati Times" />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://thecincinnatitimes.com/" />
+      <meta property="og:site_name" content="The Cincinnati Times." />
       {/* <meta
         property="og:image"
         content={`https://api.thecincinnatitimes.com/${pictures[0]}`}
@@ -87,7 +89,6 @@ const Home = () => {
 
       {/* Non-Essential, But Recommended */}
       {/* <meta property="og:description" content={renderPost?.summary} /> */}
-      {/* <meta property="og:site_name" content="The Cincinnati Times." /> */}
       {/* <meta property="twitter:title" content={renderPost?.title} /> */}
       {/* <meta property="twitter:description" content={renderPost?.summary} /> */}
       {/* <meta property="twitter:site" content="https://leviokoye.online/" /> */}

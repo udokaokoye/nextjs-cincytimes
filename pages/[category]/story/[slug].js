@@ -196,9 +196,9 @@ const NewsPage = ({postsData}) => {
     <>
     <Head>
       <meta charset="UTF-8" />
-      <title>{truncate(renderPost?.title, 15)}</title>
+      <title>{truncate(renderPost?.title, 7)}</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-      <meta name="description" content={truncate(renderPost?.summary, 30)} />
+      <meta name="description" content={truncate(renderPost?.summary, 16)} />
       {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content={renderPost?.title} />

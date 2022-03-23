@@ -69,7 +69,7 @@ const Home = () => {
     <Head>
       <meta charset="UTF-8" />
       <title>The Cincinnati Times</title>
-      <meta name="keywords" content="title, newspapper, cincinnati, cincinnatitimes, thecincinnatitimes.com, The Cincinnati Times, Cincinnati NewsPapper, Latest News, Top Newspappers" />
+      <meta name="keywords" content="title, newspaper, cincinnati, cincinnatitimes, thecincinnatitimes.com, The Cincinnati Times, Cincinnati NewsPaper, Latest News, Top Newspapers" />
       <meta name="descrition" content="The Cincinnati Times, News At Your Finger Tips" />
       {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 

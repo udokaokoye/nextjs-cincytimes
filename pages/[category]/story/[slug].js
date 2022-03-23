@@ -194,7 +194,7 @@ const NewsPage = ({postsData}) => {
       <meta charset="UTF-8" />
       <title>{renderPost?.title}</title>
       {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-      <meta name="descrition" content={renderPost?.summary} />
+      <meta name="description" content={renderPost?.summary} />
       {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content={renderPost?.title} />

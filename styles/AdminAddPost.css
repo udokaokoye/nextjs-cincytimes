@@ -10,7 +10,7 @@
 }
 
 .add_post_container .add_post_wrapper .add_post_intro {
-  font-family: "Roboto";
+  font-family: "Lato";
   margin-bottom: 40px;
 }
 
@@ -35,7 +35,7 @@
 }
 
 .add_post_container .add_post_wrapper .form {
-  font-family: "Roboto";
+  font-family: "Lato";
 }
 
 .add_post_container .add_post_wrapper .form input,
@@ -43,7 +43,7 @@
 .add_post_container .add_post_wrapper .form select {
   display: block;
   margin-bottom: 20px;
-  font-family: "Roboto";
+  font-family: "Lato";
 }
 
 .add_post_container .add_post_wrapper .form input:focus,

@@ -9,7 +9,7 @@ function Editor({ onChange, editorLoaded, name, value, editorConfiguration, data
   useEffect(() => {
     editorRef.current = {
       CKEditor: require("@ckeditor/ckeditor5-react").CKEditor, // v3+
-      ClassicEditor: require("ckeditor5-custom-build/build/ckeditor"),
+      ClassicEditor: require('../customCK/build/ckeditor.js'),
       // mediaEmbed: require('ckeditor5')
     };
   }, []);

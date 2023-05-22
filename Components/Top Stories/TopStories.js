@@ -67,7 +67,7 @@ const TopStories = ({ posts, recentTrend }) => {
                     layout="fill"
                     objectFit="contain"
                     placeholder="blur"
-                    blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3>{posts[2].title}</h3>
@@ -121,7 +121,7 @@ const TopStories = ({ posts, recentTrend }) => {
                       layout="fill"
                       objectFit="contain"
                       placeholder="blur"
-                      blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                      blurDataURL="../../Assets/Logos/small logo.png"
                     />
                   </a>
                 </Link>
@@ -289,7 +289,7 @@ const TopStories = ({ posts, recentTrend }) => {
                         layout="fill"
                         objectFit="contain"
                         placeholder="blur"
-                        blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                        blurDataURL="../../Assets/Logos/small logo.png"
                       />
                     </a>
                   </Link>
@@ -352,7 +352,7 @@ const TopStories = ({ posts, recentTrend }) => {
                     layout="fill"
                     objectFit="contain"
                     placeholder="blur"
-                    blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">
@@ -375,7 +375,7 @@ const TopStories = ({ posts, recentTrend }) => {
                     layout="fill"
                     objectFit="contain"
                     placeholder="blur"
-                    blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">
@@ -398,7 +398,7 @@ const TopStories = ({ posts, recentTrend }) => {
                     layout="fill"
                     objectFit="contain"
                     placeholder="blur"
-                    blurDataURL="https://drive.google.com/file/d/1jmQ3rJM6p-o9aDukUaYb5pnjTytPVlGD/view?usp=sharing"
+                    blurDataURL="../../Assets/Logos/small logo.png"
                   />
                 </div>
                 <h3 className="side_right_content_title">

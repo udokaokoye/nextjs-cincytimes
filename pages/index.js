@@ -57,24 +57,20 @@ const Home = () => {
 
 
   if (isLoad) {
-    return <Loader />;
-  }
+    return (
 
-
-
-
-
-  return (
-    <>
-    <Head>
+<>
+<Head>
       <meta charset="UTF-8" />
-      <title>The Cincinnati Times</title>
-      {/* <meta name="keywords" content="titla, meta, nextjs" /> */}
-      <meta name="descrition" content="The Cincinnati Times, News At Your Finger Tips" />
-      <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+      <title>The Cincinnati Times - Breaking News On The Go</title>
+      <meta name="keywords" content="title, newspaper, cincinnati, cincinnatitimes, thecincinnatitimes.com, The Cincinnati Times, Cincinnati NewsPaper, Latest News, Top Newspapers" />
+      <meta name="description" content="The Cincinnati Times, News At Your Finger Tips" />
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
 
       <meta property="og:title" content="The Cincinnati Times" />
-      <meta property="og:type" content="article" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://thecincinnatitimes.com/" />
+      <meta property="og:site_name" content="The Cincinnati Times." />
       {/* <meta
         property="og:image"
         content={`https://api.thecincinnatitimes.com/${pictures[0]}`}
@@ -87,7 +83,49 @@ const Home = () => {
 
       {/* Non-Essential, But Recommended */}
       {/* <meta property="og:description" content={renderPost?.summary} /> */}
-      {/* <meta property="og:site_name" content="The Cincinnati Times." /> */}
+      {/* <meta property="twitter:title" content={renderPost?.title} /> */}
+      {/* <meta property="twitter:description" content={renderPost?.summary} /> */}
+      {/* <meta property="twitter:site" content="https://leviokoye.online/" /> */}
+      {/* <meta property="twitter:image" content={`https://api.thecincinnatitimes.com/${pictures[0]}`} /> */}
+      {/* <meta name="twitter:image:alt" content={renderPost?.title} /> */}
+    </Head>
+    
+    <Loader />
+</>
+
+    
+    );
+  }
+
+
+
+
+
+  return (
+    <>
+    <Head>
+      <meta charset="UTF-8" />
+      <title>The Cincinnati Times</title>
+      <meta name="keywords" content="title, newspaper, cincinnati, cincinnatitimes, thecincinnatitimes.com, The Cincinnati Times, Cincinnati NewsPaper, Latest News, Top Newspapers" />
+      <meta name="descrition" content="The Cincinnati Times, News At Your Finger Tips" />
+      {/* <meta name="viewport" content="width=device-width, initial-scale=1.0" /> */}
+
+      <meta property="og:title" content="The Cincinnati Times" />
+      <meta property="og:type" content="website" />
+      <meta property="og:url" content="https://thecincinnatitimes.com/" />
+      <meta property="og:site_name" content="The Cincinnati Times." />
+      {/* <meta
+        property="og:image"
+        content={`https://api.thecincinnatitimes.com/${pictures[0]}`}
+      />
+      <meta
+        property="og:url"
+        content={`https://leviokoye.online/category/story/${renderPost?.post_id}`}
+      /> */}
+
+
+      {/* Non-Essential, But Recommended */}
+      {/* <meta property="og:description" content={renderPost?.summary} /> */}
       {/* <meta property="twitter:title" content={renderPost?.title} /> */}
       {/* <meta property="twitter:description" content={renderPost?.summary} /> */}
       {/* <meta property="twitter:site" content="https://leviokoye.online/" /> */}

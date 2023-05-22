@@ -1,0 +1,38 @@
+import '../styles/globals.css'
+import '../styles/Home.css'
+import '../styles/Auth.css'
+import '../styles/CovidTracker.css'
+import '../styles/TopStories.css'
+import '../styles/CovidTracker.css'
+import '../styles/Footer.css'
+import '../styles/GridCategory.css'
+import '../styles/HomeNewsCategory.css'
+import '../styles/HorizontalAds.css'
+import '../styles/HotTopics.css'
+import '../styles/LineBreaker.css'
+import '../styles/LinksNav.css'
+import '../styles/HeaderNav.css'
+import '../styles/NewsCategory.css'
+import '../styles/NewsCategory2.css'
+import '../styles/NewsCategoryList.css'
+import '../styles/NewsCategorySection.css'
+import '../styles/NewsPage.css'
+import '../styles/PopupAlert.css'
+import '../styles/SideNav.css'
+import '../styles/SubscribeBox.css'
+import '../styles/VaccineFinder.css'
+import '../styles/Weather.css'
+import '../styles/AdminAuth.css'
+import '../styles/AdminNav.css'
+import '../styles/AdminNewsCategory.css'
+import '../styles/AdminAllPost.css'
+import '../styles/AdminAddPost.css'
+import '../styles/AdminHome.css'
+import '../styles/AddUser.css'
+import '../styles/Loader.css'
+
+function MyApp({ Component, pageProps }) {
+  return <Component {...pageProps} />
+}
+
+export default MyApp

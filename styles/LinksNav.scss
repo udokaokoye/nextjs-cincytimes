@@ -1,0 +1,153 @@
+// @import url("https://cdn.udokaokoye.com/fonts/Chomsky.otf");
+// @import url("https://cdn.udokaokoye.com/fonts/franklin.ttf");
+// @import url("https://cdn.udokaokoye.com/fonts/postoni.ttf");
+// @import url('../Assets/Fonts/fonts.css');
+
+.links_nav {
+    width: 100%;
+    height: auto;
+    background-color: black;
+    display: flex;
+    justify-content: space-between;
+    padding: 10px 0px;
+    .left {
+        // background-color: blue;
+        width: 60%;
+        height: inherit;
+        margin-left: 20px;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+        color: white;
+        font-family: "Lato" !important;
+        .search_bars {
+            width: 45px;
+            display: flex;
+            justify-content: space-between;
+
+            .menu_bar {
+                margin-left: 20px;
+                display: none;
+            }
+        }
+
+        .link {
+            color: white;
+            text-decoration: none;
+            font-family: "Lato";
+            font-weight: bold;
+        }
+
+        .with_flag {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            // background-color: red;
+
+            .flag_container {
+                width: 45px;
+                // height: 80px;
+                overflow: hidden;
+                margin-left: 2px;
+                // background-color: blue;
+                display: flex;
+                justify-content: center;
+                align-items: center;
+                position: relative !important;
+                // display: flex !important;
+
+                .ohio_state_flag {
+                    width: 50%;
+                }
+            }
+
+        }
+    }
+
+    .right {
+        // background-color: rgb(39, 39, 39);
+        color: white !important;
+        width: fit-content;
+        padding: 0px 25px;
+        height: inherit;
+        margin-right: 20px;
+        display: flex;
+        font-family: 'Franklin';
+        font-weight: bold;
+        justify-content: center;
+        align-items: center;
+        cursor: pointer;
+        position: relative;
+
+        span {
+            font-weight: 400;
+            .dropdown_icn, .user_icn {
+                padding-top: 5px;
+                margin-left: 5px;
+            }
+        }
+
+        .menu {
+            display: none;
+        }
+
+        .acct_drpdwn {
+            width: 200px;
+            height: 200px;
+            background: #000;
+            position: absolute;
+            z-index: 5;
+            top: 34.3px;
+            right: 0px;
+            display: flex;
+            flex-direction: column;
+            justify-content: space-around;
+            align-items: center;
+            p {
+                cursor: pointer;
+
+                &:last-child {
+                    color: rgb(255, 74, 74);
+                }
+            }
+        }
+    }
+}
+
+@media only screen and (max-width: 1200px) {
+    .links_nav {
+        height: 7vh;
+        display: none;
+
+        .left {
+            // background: red;
+            justify-content: flex-start;
+            .link {
+                display: none;
+            }
+            
+
+            .with_flag {
+                display: flex;
+                // margin-left: 20px;
+                // background: #000;
+
+                // .flag_container {
+                //     // width: 60px !important;
+                //     background: green;
+                // }
+            }
+        }
+        
+        .right {
+            // background: blue;
+            .auth_nav_btn {
+                display: none;
+            }
+
+            .menu {
+                display: block;
+            }
+        }
+    }
+}
